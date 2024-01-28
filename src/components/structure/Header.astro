@@ -1,0 +1,47 @@
+---
+import localExitSvg from "../../images/exit.svg?raw";
+---
+
+<div class="menu-lateral">
+    <div class="menu-lateral-background" id="background-close"></div>
+    <div class="menu-lateral-container">
+        <div class="menu-lateral-exit" id="close-menu-btn">
+            <Fragment set:html={localExitSvg} />
+        </div>
+  
+        <ul class="nav-bar">
+            <li class="menu-lateral-item"><a href="#tab1">Inicio</a></li>
+            <li class="menu-lateral-item"><a href="#tab2">Acerca</a></li>
+            <li class="menu-lateral-item"><a href="#tab3">Contacto</a></li>
+        </ul>
+
+        <!-- <div class="menu-lateral-item">
+        Inicio
+        </div>
+        <div class="menu-lateral-item">
+        Acerca
+        </div>
+        <div class="menu-lateral-item">
+        Contacto
+        </div> -->
+    </div>
+</div>
+
+<header class="header-mobile">
+    <div class="header-menu">
+     <svg id="open-menu-btn" enable-background="new 0 0 32 32" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M26,16c0,1.104-0.896,2-2,2H8c-1.104,0-2-0.896-2-2s0.896-2,2-2h16C25.104,14,26,14.896,26,16z" id="XMLID_314_"/><path d="M26,8c0,1.104-0.896,2-2,2H8c-1.104,0-2-0.896-2-2s0.896-2,2-2h16C25.104,6,26,6.896,26,8z" /><path d="M26,24c0,1.104-0.896,2-2,2H8c-1.104,0-2-0.896-2-2s0.896-2,2-2h16C25.104,22,26,22.896,26,24z" /></svg>
+    </div>
+</header>
+
+<header class="header desktop">
+    <div class="nav">
+     <a class="header-logo-desktop" href="#">
+      MR
+     </a>
+     <ul class="nav-bar">
+      <li class="nav-item"><a href="#tab1">Inicio</a></li>
+      <li class="nav-item"><a href="#tab2">Acerca</a></li>
+      <li class="nav-item"><a href="#tab3">Contacto</a></li>
+     </ul>
+    </div>  
+</header>

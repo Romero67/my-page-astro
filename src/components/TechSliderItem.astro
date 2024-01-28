@@ -1,0 +1,9 @@
+---
+const {img, imgAlt, title} = Astro.props
+---
+<div>
+    <div class="tech-slider-item">
+        <Fragment set:html={img} />  
+        <span>{title}</span>
+    </div>
+</div>

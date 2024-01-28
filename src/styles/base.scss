@@ -1,0 +1,48 @@
+@import './mixin.scss';
+@import './settings.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container{
+    padding: 0 20px;
+    max-width: 1220px;
+    margin: auto;
+}
+
+.division-section{
+    width: 90%;
+    border: 1px solid #dfdfdf;
+    margin: 50px auto;
+}
+
+.desktop{
+    display: none;
+    @include respond-to('desktop'){
+        display: block;
+    }
+}
+.title{
+    font-size: 24px;
+    font-weight: 700;
+}
+.sub-title{
+    margin-top: 10px;
+    color: $color-light-grey;
+    font-size: 14px;
+}
+.sub-title a{
+    color: $color-light-grey;
+    font-style: italic;
+    text-decoration: none;
+    font-weight: 700;
+}

@@ -1,0 +1,25 @@
+.footer{
+    padding: 0px 50px 30px 50px;
+
+    &-info{
+        margin-top: 40px;
+        text-align: center;
+        font-weight: 700;
+        padding-bottom: 20px;
+    }
+    
+    &-redes{
+        display: flex;
+    }
+
+    &-redes-item svg{
+        fill: #4e4e4e;
+    }
+
+    @include respond-to('desktop'){
+        &-redes-item svg{
+            width: 45px;
+            height: 45px;
+        }
+    }
+}

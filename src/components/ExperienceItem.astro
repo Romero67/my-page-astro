@@ -1,0 +1,21 @@
+---
+const {title, subtitle, description} = Astro.props
+---
+
+<div class="experience-item">
+    <div class="experience-head">
+        <div class="experience-cont-title">
+            <h2 class="experience-title">{title}</h2>
+            <span class="experience-subtitle"
+                >{subtitle}</span
+            >
+        </div>
+    </div>
+
+    <div class="experience-info">
+        <div class="experience-line"></div>
+        <p class="experience-p">
+            {description}
+        </p>
+    </div>
+</div>

@@ -1,0 +1,183 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Separate from "../components/Separate.astro";
+import ExperienceItem from "../components/ExperienceItem.astro";
+import ProyectItem from "../components/ProyectItem.astro";
+import TechSliderItem from "../components/TechSliderItem.astro";
+import localWikiImg from "../images/wikicat.png";
+import localFutbolImg from "../images/appfutbol.png";
+import localDragImg from "../images/upload.png";
+import localHtmlSvg from "../images/html.svg?raw";
+import localCssSvg from "../images/css.svg?raw";
+import localJsSvg from "../images/js.svg?raw";
+import localSassSvg from "../images/sass.svg?raw";
+import localMongodbSvg from "../images/mongodb.svg?raw";
+import localNodejsSvg from "../images/nodejs.svg?raw";
+import localGitSvg from "../images/git.svg?raw";
+---
+
+<BaseLayout page="index">
+	<section class="main-name" id="tab1">
+		<div class="main-name-text">
+			<h1>Mariano Romero</h1>
+			<span class="main-job">Desarrollador web</span>
+		</div>
+	</section>
+
+	<section class="container about" id="tab2">
+		<div class="about-info">
+			<h2>Sobre mí</h2>
+			<p>
+				¡Hola lector! Esta es mi página web personal, aquí iré
+				actualizando sobre mi vida, ahora te quiero contar como soy. Soy
+				alguien que busca siempre romper sus límites, comunicativo,
+				cooperativo, amable y comprometido. Siempre intento dar lo mejor
+				de mí en cada situación, enfocado en la solución no en el
+				problema. Vivo mi vida dedicada a crecer interiormente.
+			</p>
+		</div>
+	</section>
+
+	<Separate />
+
+	<section class="container experience">
+		<div class="title experience-title">Mi camino</div>
+
+		<ExperienceItem
+			title="Aplay America SA"
+			subtitle="(feb 2022 - actualidad)"
+			description="Programador web. Mejoras y mantenimiento en proyectos orientados a portales de noticias con tecnologías como html,css, sass, js, nodejs, mongodb, handlebars"
+		/>
+
+		<ExperienceItem
+			title="Freelance"
+			subtitle="(feb 2021 - marz 2021)"
+			description="Desarrollo de un sistema para la administración de un gimnasio con tecnologías como C#, windows form, SQL"
+		/>
+
+		<ExperienceItem
+			title="UTN - Argentina"
+			subtitle="(2020 - 2021)"
+			description="Estudios en la Universidad Tecnológica Nacional como Técnico superior en programación"
+		/>
+	</section>
+
+	<Separate />
+
+	<section class="container proyects">
+		<div class="title proyects-title">
+			<h2 class="title">Proyectos</h2>
+			<span class="sub-title"
+				>Ver código en mi <a
+					href="https://github.com/Romero67"
+					target="_blank">git-hub</a
+				></span
+			>
+		</div>
+
+		<div class="cont-proyects">
+			<ProyectItem
+				url="https://main--funny-faloodeh-7a01df.netlify.app/"
+				img={localWikiImg}
+				imgAlt="Wiki Cat"
+				title="Wiki Cat"
+				description="Es una wiki-cat hecha en React con conexión a un backend creado hecho con express"
+			/>
+
+			<ProyectItem
+				url="https://app-clasificacion-equipos-argentinos-2.vercel.app/"
+				img={localFutbolImg}
+				imgAlt="App scrapper fútbol"
+				title="Scrapper Tabla"
+				description="Scrapper tabla liga argentina a una web real, hecho con cheerio, express y handlebars"
+			/>
+
+			<ProyectItem
+				url="https://bespoke-cat-a77f15.netlify.app/"
+				img={localDragImg}
+				imgAlt="Drag and Drop"
+				title="Drag and Drop"
+				description="Proyecto para arrastar y cargar imagenes, esta hecho con React"
+			/>
+		</div>
+	</section>
+
+	<Separate />
+
+	<section class="container technologies">
+		<div class="tech-slider">
+			<TechSliderItem
+				img={localHtmlSvg}
+				imgAlt="Icon HTML"
+				title="HTML"
+			/>
+			<TechSliderItem img={localCssSvg} imgAlt="Icon CSS" title="CSS" />
+			<TechSliderItem
+				img={localJsSvg}
+				imgAlt="Icon Javascript"
+				title="Javascript"
+			/>
+			<TechSliderItem
+				img={localSassSvg}
+				imgAlt="Icon Sass"
+				title="Sass"
+			/>
+			<TechSliderItem
+				img={localMongodbSvg}
+				imgAlt="Icon MongoDB"
+				title="MongoDB"
+			/>
+			<TechSliderItem
+				img={localNodejsSvg}
+				imgAlt="Icon Nodejs"
+				title="Nodejs"
+			/>
+			<TechSliderItem img={localGitSvg} imgAlt="Icon GIT" title="GIT" />
+		</div>
+	</section>
+
+	<Separate />
+
+	<div class="container container-form">
+		<form id="contact-form" class="form-mail">
+			<input type="hidden" name="contact_number" />
+			<div class="form-mail-title">
+				<span class="form-mail-title-text">CONTÁCTAME</span>
+			</div>
+			<input
+				type="text"
+				placeholder="Nombre"
+				id="form_nombre"
+				name="nombre"
+			/>
+			<input
+				type="text"
+				placeholder="E-mail de contacto"
+				id="form_mail"
+				name="mail"
+			/>
+			<div class="form-mail-contador">
+				<textarea
+					id="form_mensaje"
+					cols="30"
+					rows="10"
+					name="mensaje"
+					placeholder="Mensaje"></textarea>
+				<span class="form-contador-text"></span>
+			</div>
+
+			<div class="form-mail-send">
+				<button type="submit">ENVIAR</button>
+				<span class="form-msj-error"></span>
+				<span class="form-msj-success"></span>
+			</div>
+		</form>
+	</div>
+
+	<Separate />
+
+	<script>
+		import "../scripts/slick/slick.js";
+		import "../scripts/main.js";
+	</script>
+</BaseLayout>
