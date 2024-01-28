@@ -1,5 +1,27 @@
-$color-brand: #000080;
+$color-brand: #0056b3;
 $color-light-grey: #7a7a7a;
+$color-white: #fff;
+$color-black: #000;
+
+$color-brand--dark: #336699;
+$color-light-grey--dark: #7a7a7a;
+$color-white--dark: #000;
+$color-black--dark: #fff;
+
+.theme{
+  --color-brand: #{$color-brand};
+  --color-light-grey: #{$color-light-grey};
+  --color-white: #{$color-white};
+  --color-black: #{$color-black};
+
+  // Tema oscuro
+  &--dark{
+    --color-brand: #{$color-brand--dark};
+    --color-light-grey: #{$color-light-grey--dark};
+    --color-white: #{$color-white--dark};
+    --color-black: #{$color-black--dark};
+  }
+}
 
 $breakpoints: (
   'smallphone': 23.4375em, //375px
