@@ -5,13 +5,13 @@ import Js from '../components/structure/Js.astro'
 import Metas from '../components/structure/Metas.astro'
 import Css from '../components/structure/Css.astro'
 import Fonts from '../components/structure/Fonts.astro'
-const {pageTitle, page} = Astro.props;
+const {pageTitle, pageDescription, page} = Astro.props;
 ---
 <html lang="es">
   <head>
 
     <Fonts />
-    <Metas pageTitle={pageTitle} />
+    <Metas pageTitle={pageTitle} pageDescription={pageDescription} />
     <Css page={page}/>
     <Js />
 

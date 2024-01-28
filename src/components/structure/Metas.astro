@@ -1,9 +1,27 @@
 ---
-const {pageTitle} = Astro.props;
+const {pageTitle, pageDescription} = Astro.props;
+const isProd = import.meta.env.PROD == 'true' ? true : false
 ---
 
 <meta charset="utf-8" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" href="/favicon.png" />
 <meta name="viewport" content="width=device-width" />
 <meta name="generator" content={Astro.generator} />
+
+<meta property="og:image" content="/favicon.png">
+<meta name="twitter:image" content="/favicon.png">
+<meta property="og:url" content="http://marianoromero.ar">
+<meta property="og:site_name" content="Mariano Romero">
+<meta name="twitter:title" content={pageTitle}>
+<meta property="og:type" content="website">
+<meta name="robots" content={isProd ? 'index, follow' : 'none'}/>
+<meta name="author" content="Mariano Romero">
+<meta name="publisher" content="Mariano Romero">
+<link rel="canonical" href="http://marianoromero.ar" />
+
+<meta property="og:description" content={pageDescription}/>
+<meta name="description" content={pageDescription}/>
+<meta property="description" content={pageDescription}/>
+<meta name="twitter:description" content={pageDescription} />
+
 <title>{pageTitle}</title>
