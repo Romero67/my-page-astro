@@ -2,7 +2,7 @@ function initSlider(){
     $('.tech-slider').slick({
       slidesToShow: 5,
       slidesToScroll: 1,
-      autoplay: false,
+      autoplay: true,
       autoplaySpeed: 2000,
       infinite: true,
       responsive: [
@@ -42,11 +42,14 @@ function initSlider(){
   }
   
   function initShowHideHeader(){
+    console.log("initShowHideHeader: ",initShowHideHeader)
     $(window).on('scroll', function() {
       if ($(window).scrollTop() > 0) {
         $('.header').addClass('scrolled');
+        console.log(111111111)
         $('.header-mobile').addClass('scrolled');
       } else {
+        console.log(222222)
         $('.header').removeClass('scrolled');
         $('.header-mobile').removeClass('scrolled');
       }

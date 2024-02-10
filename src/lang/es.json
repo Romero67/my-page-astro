@@ -1,0 +1,57 @@
+{
+    "items_nav": {
+        "initation": "Inicio",
+        "about": "Acerca",
+        "contact": "Contacto"
+    },
+    "page_index": {
+        "main_job": "Desarrollador Web",
+        "about": {
+            "title": "Sobre mí",
+            "description": "¡Hola lector! Esta es mi página web personal, aquí iré actualizando sobre mi vida, ahora te quiero contar como soy. Soy alguien que busca siempre romper sus límites, comunicativo, cooperativo, amable y comprometido. Siempre intento dar lo mejor de mí en cada situación, enfocado en la solución no en el problema. Vivo mi vida dedicada a crecer interiormente."
+        },
+        "experience": {
+            "title": "Mí camino",
+            "items": [
+                {
+                    "title": "Aplay America SA",
+                    "subtitle": "(feb 2022 - actualidad)",
+                    "description": "Programador web. Mejoras y mantenimiento en proyectos orientados a portales de noticias con tecnologías como html,css, sass, js, nodejs, mongodb, handlebars"
+                },
+                {
+                    "title": "Freelance",
+                    "subtitle": "(feb 2021 - marz 2021)",
+                    "description": "Desarrollo de un sistema para la administración de un gimnasio con tecnologías como C#, windows form, SQL"
+                },
+                {
+                    "title": "UTN - Argentina",
+                    "subtitle": "(2020 - 2021)",
+                    "description": "Estudios en la Universidad Tecnológica Nacional como Técnico superior en programación"
+                }
+            ]
+        },
+        "proyects": {
+            "title": "Proyectos",
+            "subtitle": "Ver código en mi",
+            "item_wikicat": {
+                "title": "Wiki Cat",
+                "description": "Es una wiki-cat hecha en React con conexión a un backend creado hecho con express"
+            },
+            "item_scrapper": {
+                "title": "Scrapper Tabla",
+                "description": "Scrapper tabla liga argentina a una web real, hecho con cheerio, express y handlebars"
+            },
+            "item_draganddrop": {
+                "title": "Drag and Drop",
+                "description": "Proyecto para arrastar y cargar imagenes, esta hecho con React"
+            }
+        },
+        "contact_form": {
+            "title": "CONTÁCTAME",
+            "plh_name": "Nombre",
+            "plh_mail": "E-mail de contacto",
+            "plh_message": "Mensaje",
+            "btn_send": "ENVIAR"
+        }
+    }
+}

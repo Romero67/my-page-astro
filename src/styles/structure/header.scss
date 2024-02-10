@@ -33,15 +33,15 @@
         letter-spacing: 0.5px;
     }
 
-    .scrolled {
+    &.scrolled {
         background-color: var(--color-brand);
     }
 
-    .scrolled .nav-item a {
+    &.scrolled .nav-item a {
         color: var(--color-white);
     }
 
-    .scrolled .header-logo-desktop {
+    &.scrolled .header-logo-desktop {
         color: var(--color-white);
     }
 
@@ -106,10 +106,10 @@
         background: none;
     }
     .sun {
-        fill: var(--color-white);
+        fill: var(--color-brand);
     }
     .moon {
-        fill: var(--color-black);
+        fill: var(--color-brand);
     }
 
     .nav-bar{
@@ -143,7 +143,7 @@
         text-align: center;
         
         a{
-            color: var(--color-black);
+            color: var(--color-brand);
             text-decoration: none;
             font-weight: 700;
             font-size: 22px;
@@ -161,8 +161,19 @@
             height: 24px;
 
             path{
-                fill: var(--color-black);
+                fill: var(--color-brand);
             }
         }
+    }
+
+    #langToggle {
+        border: none;
+        background: var(--color-brand);
+        color: white;
+        font-weight: 700;
+        font-size: 22px;
+        padding: 6px;
+        border-radius: 5px;
+        margin-top: 20px;
     }
 }

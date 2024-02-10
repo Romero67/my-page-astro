@@ -1,5 +1,9 @@
 @import '../base.scss';
 
+[lang="en"]{
+    display: none;
+}
+
 .main-name {
     display: flex;
     align-items: center;

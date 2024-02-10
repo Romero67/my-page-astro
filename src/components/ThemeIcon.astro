@@ -9,7 +9,7 @@
   </svg>
 </button>
 
-<script is:inline>
+<script is:inline type="module">
   const theme = (() => {
     if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
       return localStorage.getItem('theme');
@@ -22,8 +22,14 @@
 
   if (theme === 'light') {
     document.body.classList.remove('theme--dark');
+    console.log("ocultando sol")
+    document.querySelector('.sun').style.display = 'none'
+    document.querySelector('.moon').style.display = 'inherit'
   } else {
     document.body.classList.add('theme--dark');
+    console.log("ocultando luna")
+    document.querySelector('.moon').style.display = 'none'
+    document.querySelector('.sun').style.display = 'inherit'
   }
 
   localStorage.setItem('theme', theme);
@@ -34,6 +40,14 @@
 
     const isDark = body.classList.contains('theme--dark');
     localStorage.setItem('theme', isDark ? 'theme--dark' : 'light');
+
+    if(isDark){
+      document.querySelector('.moon').style.display = 'none'
+      document.querySelector('.sun').style.display = 'inherit'
+    }else{
+      document.querySelector('.sun').style.display = 'none'
+      document.querySelector('.moon').style.display = 'inherit'
+    }
 
     $('.menu-lateral').css('left', '-100%');
     $('body').css('overflow', 'auto');

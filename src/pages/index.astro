@@ -14,66 +14,78 @@ import localSassSvg from "../images/sass.svg?raw";
 import localMongodbSvg from "../images/mongodb.svg?raw";
 import localNodejsSvg from "../images/nodejs.svg?raw";
 import localGitSvg from "../images/git.svg?raw";
+import esLang from "../lang/es.json";
+import enLang from "../lang/en.json";
 ---
 
-<BaseLayout 
-pageTitle="Mariano Romero - Desarrollador Web" 
-pageDescription="Soy Mariano Romero, un apasionado desarrollador web compartiendo proyectos, tutoriales y experiencias. Explora mi página personal y descubre más sobre mi trabajo y habilidades. ¡Bienvenido!"
-page="index">
+<BaseLayout
+	pageTitle="Mariano Romero - Desarrollador Web"
+	pageDescription="Soy Mariano Romero, un apasionado desarrollador web compartiendo proyectos, tutoriales y experiencias. Explora mi página personal y descubre más sobre mi trabajo y habilidades. ¡Bienvenido!"
+	page="index"
+>
 	<section class="main-name" id="tab1">
 		<div class="main-name-text">
 			<h1>Mariano Romero</h1>
-			<span class="main-job">Desarrollador web</span>
+			<span class="main-job" lang="es">{esLang.page_index.main_job}</span>
+			<span class="main-job" lang="en">{enLang.page_index.main_job}</span>
 		</div>
 	</section>
 
 	<section class="container about" id="tab2">
 		<div class="about-info">
-			<h2>Sobre mí</h2>
-			<p>
-				¡Hola lector! Esta es mi página web personal, aquí iré
-				actualizando sobre mi vida, ahora te quiero contar como soy. Soy
-				alguien que busca siempre romper sus límites, comunicativo,
-				cooperativo, amable y comprometido. Siempre intento dar lo mejor
-				de mí en cada situación, enfocado en la solución no en el
-				problema. Vivo mi vida dedicada a crecer interiormente.
-			</p>
+			<h2 lang="es">{esLang.page_index.about.title}</h2>
+			<h2 lang="en">{enLang.page_index.about.title}</h2>
+			<p lang="es">{esLang.page_index.about.description}</p>
+			<p lang="en">{enLang.page_index.about.description}</p>
 		</div>
 	</section>
 
 	<Separate />
 
 	<section class="container experience">
-		<div class="title experience-title">Mi camino</div>
+		<div class="title experience-title" lang="es">
+			{esLang.page_index.experience.title}
+		</div>
+		<div class="title experience-title" lang="en">
+			{enLang.page_index.experience.title}
+		</div>
 
-		<ExperienceItem
-			title="Aplay America SA"
-			subtitle="(feb 2022 - actualidad)"
-			description="Programador web. Mejoras y mantenimiento en proyectos orientados a portales de noticias con tecnologías como html,css, sass, js, nodejs, mongodb, handlebars"
-		/>
-
-		<ExperienceItem
-			title="Freelance"
-			subtitle="(feb 2021 - marz 2021)"
-			description="Desarrollo de un sistema para la administración de un gimnasio con tecnologías como C#, windows form, SQL"
-		/>
-
-		<ExperienceItem
-			title="UTN - Argentina"
-			subtitle="(2020 - 2021)"
-			description="Estudios en la Universidad Tecnológica Nacional como Técnico superior en programación"
-		/>
+		{
+			esLang.page_index.experience.items.map((el) => (
+				<ExperienceItem
+					title={el.title}
+					subtitle={el.subtitle}
+					description={el.description}
+					lang="es"
+				/>
+			))
+		}
+		{
+			enLang.page_index.experience.items.map((el) => (
+				<ExperienceItem
+					title={el.title}
+					subtitle={el.subtitle}
+					description={el.description}
+					lang="en"
+				/>
+			))
+		}
 	</section>
 
 	<Separate />
 
 	<section class="container proyects">
 		<div class="title proyects-title">
-			<h2 class="title">Proyectos</h2>
-			<span class="sub-title"
-				>Ver código en mi <a
-					href="https://github.com/Romero67"
-					target="_blank">git-hub</a
+			<h2 class="title" lang="es">{esLang.page_index.proyects.title}</h2>
+			<h2 class="title" lang="en">{enLang.page_index.proyects.title}</h2>
+			<span class="sub-title" lang="es"
+				>{esLang.page_index.proyects.subtitle}
+				<a href="https://github.com/Romero67" target="_blank">git-hub</a
+				></span
+			>
+			<span class="sub-title" lang="en"
+				>{enLang.page_index.proyects.subtitle}
+				<a href="https://github.com/Romero67" target="_blank">git-hub</a
 				></span
 			>
 		</div>
@@ -83,24 +95,57 @@ page="index">
 				url="https://main--funny-faloodeh-7a01df.netlify.app/"
 				img={localWikiImg}
 				imgAlt="Wiki Cat"
-				title="Wiki Cat"
-				description="Es una wiki-cat hecha en React con conexión a un backend creado hecho con express"
+				title={esLang.page_index.proyects.item_wikicat.title}
+				description={esLang.page_index.proyects.item_wikicat
+					.description}
+				lang="es"
+			/>
+			<ProyectItem
+				url="https://main--funny-faloodeh-7a01df.netlify.app/"
+				img={localWikiImg}
+				imgAlt="Wiki Cat"
+				title={enLang.page_index.proyects.item_wikicat.title}
+				description={enLang.page_index.proyects.item_wikicat
+					.description}
+				lang="en"
 			/>
 
 			<ProyectItem
 				url="https://app-clasificacion-equipos-argentinos-2.vercel.app/"
 				img={localFutbolImg}
 				imgAlt="App scrapper fútbol"
-				title="Scrapper Tabla"
-				description="Scrapper tabla liga argentina a una web real, hecho con cheerio, express y handlebars"
+				title={esLang.page_index.proyects.item_scrapper.title}
+				description={esLang.page_index.proyects.item_scrapper
+					.description}
+				lang="es"
+			/>
+			<ProyectItem
+				url="https://app-clasificacion-equipos-argentinos-2.vercel.app/"
+				img={localFutbolImg}
+				imgAlt="App scrapper fútbol"
+				title={enLang.page_index.proyects.item_scrapper.title}
+				description={enLang.page_index.proyects.item_scrapper
+					.description}
+				lang="en"
 			/>
 
 			<ProyectItem
 				url="https://bespoke-cat-a77f15.netlify.app/"
 				img={localDragImg}
 				imgAlt="Drag and Drop"
-				title="Drag and Drop"
-				description="Proyecto para arrastar y cargar imagenes, esta hecho con React"
+				title={esLang.page_index.proyects.item_draganddrop.title}
+				description={esLang.page_index.proyects.item_draganddrop
+					.description}
+				lang="es"
+			/>
+			<ProyectItem
+				url="https://bespoke-cat-a77f15.netlify.app/"
+				img={localDragImg}
+				imgAlt="Drag and Drop"
+				title={enLang.page_index.proyects.item_draganddrop.title}
+				description={enLang.page_index.proyects.item_draganddrop
+					.description}
+				lang="en"
 			/>
 		</div>
 	</section>
@@ -145,19 +190,40 @@ page="index">
 		<form id="contact-form" class="form-mail">
 			<input type="hidden" name="contact_number" />
 			<div class="form-mail-title">
-				<span class="form-mail-title-text">CONTÁCTAME</span>
+				<span class="form-mail-title-text" lang="es"
+					>{esLang.page_index.contact_form.title}</span
+				>
+				<span class="form-mail-title-text" lang="en"
+					>{enLang.page_index.contact_form.title}</span
+				>
 			</div>
 			<input
 				type="text"
-				placeholder="Nombre"
+				placeholder={esLang.page_index.contact_form.plh_name}
 				id="form_nombre"
 				name="nombre"
+				lang="es"
 			/>
 			<input
 				type="text"
-				placeholder="E-mail de contacto"
+				placeholder={enLang.page_index.contact_form.plh_name}
+				id="form_nombre"
+				name="nombre"
+				lang="en"
+			/>
+			<input
+				type="text"
+				placeholder={esLang.page_index.contact_form.plh_mail}
 				id="form_mail"
 				name="mail"
+				lang="es"
+			/>
+			<input
+				type="text"
+				placeholder={enLang.page_index.contact_form.plh_mail}
+				id="form_mail"
+				name="mail"
+				lang="en"
 			/>
 			<div class="form-mail-contador">
 				<textarea
@@ -165,12 +231,22 @@ page="index">
 					cols="30"
 					rows="10"
 					name="mensaje"
-					placeholder="Mensaje"></textarea>
+					placeholder={esLang.page_index.contact_form.plh_message}
+					lang="es"></textarea>
+				<textarea
+					id="form_mensaje"
+					cols="30"
+					rows="10"
+					name="mensaje"
+					placeholder={enLang.page_index.contact_form.plh_message}
+					lang="en"></textarea>
 				<span class="form-contador-text"></span>
 			</div>
 
 			<div class="form-mail-send">
-				<button type="submit">ENVIAR</button>
+				<button type="submit"
+					>{enLang.page_index.contact_form.btn_send}</button
+				>
 				<span class="form-msj-error"></span>
 				<span class="form-msj-success"></span>
 			</div>
@@ -183,4 +259,22 @@ page="index">
 		import "../scripts/slick/slick.js";
 		import "../scripts/main.js";
 	</script>
+	<script is:inline>
+		const userLanguage = navigator.language || navigator.userLanguage;
+		
+		let langToDelete = ""
+
+		if (userLanguage.startsWith("es")) {
+			langToDelete = 'en'
+		} else if (userLanguage.startsWith("en")) {
+			langToDelete = 'es'
+		} else {
+			langToDelete = 'en'
+		}
+
+		
+	</script>
 </BaseLayout>
+
+<!-- TENGO QUE APLICAR LOS BOTONES EN DESKTOP, MODO CLARO/OSCURO, ES/EN
+VERIFICAR QUE TODO ANDE BIEN -->

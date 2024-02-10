@@ -1,20 +1,18 @@
 ---
-const {title, subtitle, description} = Astro.props
+const {title, subtitle, description, lang} = Astro.props
 ---
 
-<div class="experience-item">
+<div class="experience-item" lang={lang}>
     <div class="experience-head">
         <div class="experience-cont-title">
-            <h2 class="experience-title">{title}</h2>
-            <span class="experience-subtitle"
-                >{subtitle}</span
-            >
+            <h2 class="experience-title" lang={lang}>{title}</h2>
+            <span class="experience-subtitle" lang={lang}>{subtitle}</span>
         </div>
     </div>
 
     <div class="experience-info">
         <div class="experience-line"></div>
-        <p class="experience-p">
+        <p class="experience-p" lang={lang}>
             {description}
         </p>
     </div>

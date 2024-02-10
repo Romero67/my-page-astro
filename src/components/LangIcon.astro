@@ -1,0 +1,59 @@
+---
+
+---
+
+<button id="langToggle">
+  <span class="text-es">ES</span>
+  <span class="text-en">EN</span>
+</button>
+
+<script is:inline type="module">
+
+  const hideHtml = (langToDelete) =>{
+    if(!langToDelete){
+      userLanguage = navigator.language || navigator.userLanguage;
+      langToDelete =  (userLanguage && userLanguage.startsWith('en')) ? 'es' : 'en'
+    }
+    
+    const elementsWithLang = document.querySelectorAll("[lang]");
+    elementsWithLang.forEach((element) => {
+			if (element.getAttribute("lang") === langToDelete) {
+				element.style.display = 'none';
+			}
+			if (element.getAttribute("lang") !== langToDelete) {
+				element.style.display = 'inherit';
+			}
+		});
+
+    localStorage.setItem('mr_lang', langToDelete)
+    toggleLangBtns(langToDelete)
+  }
+
+  const toggleLangBtns = (lang) =>{
+    if(lang == 'es'){
+      document.querySelector('.text-en').style.display = 'none'
+      document.querySelector('.text-es').style.display = 'inherit'
+    }else{
+      document.querySelector('.text-es').style.display = 'none'
+      document.querySelector('.text-en').style.display = 'inherit'
+    }
+  }
+
+  const getLang = () =>{
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('mr_lang')) {
+      return localStorage.getItem('mr_lang');
+    }
+    return false;
+  }
+
+  const handleToggleLangClick = () => {
+    const lang = getLang() == 'es' ? 'en' : 'es'
+    hideHtml(lang)
+    $('.menu-lateral').css('left', '-100%');
+    $('body').css('overflow', 'auto');
+  }
+
+  hideHtml(getLang())
+
+  document.getElementById('langToggle').addEventListener('click', handleToggleLangClick);
+</script>

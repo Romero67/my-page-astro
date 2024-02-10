@@ -1,0 +1,57 @@
+{
+    "items_nav": {
+        "initation": "Home",
+        "about": "About",
+        "contact": "Contact"
+    },
+    "page_index": {
+        "main_job": "Web Developer",
+        "about": {
+            "title": "About Me",
+            "description": "Hello reader! This is my personal website, where I will be updating about my life. Now, let me tell you about myself. I'm someone who always seeks to push my limits, communicative, cooperative, friendly, and committed. I always try to give my best in every situation, focusing on the solution rather than the problem. I live my life dedicated to inner growth."
+        },
+        "experience": {
+            "title": "My Journey",
+            "items": [
+                {
+                    "title": "Aplay America SA",
+                    "subtitle": "(Feb 2022 - Present)",
+                    "description": "Web Developer. Enhancements and maintenance in projects focused on news portals with technologies like HTML, CSS, Sass, JavaScript, Node.js, MongoDB, Handlebars."
+                },
+                {
+                    "title": "Freelance",
+                    "subtitle": "(Feb 2021 - Mar 2021)",
+                    "description": "Development of a system for managing a gym with technologies like C#, Windows Form, SQL."
+                },
+                {
+                    "title": "UTN - Argentina",
+                    "subtitle": "(2020 - 2021)",
+                    "description": "Studies at the National Technological University as a Higher Technician in Programming."
+                }
+            ]
+        },
+        "proyects": {
+            "title": "Projects",
+            "subtitle": "View code on my",
+            "item_wikicat": {
+                "title": "Wiki Cat",
+                "description": "It's a Wiki-Cat made in React with a connection to a backend created using Express."
+            },
+            "item_scrapper": {
+                "title": "Scrapper Tabla",
+                "description": "Scrapes Argentina league table to a real web, made with Cheerio, Express, and Handlebars."
+            },
+            "item_draganddrop": {
+                "title": "Drag and Drop",
+                "description": "Project for dragging and dropping images, made with React."
+            }
+        },
+        "contact_form": {
+            "title": "CONTACT ME",
+            "plh_name": "Name",
+            "plh_mail": "Contact E-mail",
+            "plh_message": "Message",
+            "btn_send": "SEND"
+        }
+    }
+}

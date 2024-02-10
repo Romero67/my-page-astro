@@ -1,20 +1,21 @@
 ---
 import { Image } from 'astro:assets';
-const {url, img, imgAlt, title, description} = Astro.props
+const {url, img, imgAlt, title, description, lang} = Astro.props
 ---
 
 <a
     class="cont-proyects-link"
     href={url}
     target="_blank"
+    lang={lang}
 >
     <div class="cont-proyects-item">
         <div class="cont-proyects-item-img">
             <Image src={img} alt={imgAlt} />
         </div>
         <div class="cont-proyects-item-body">
-            <div class="cont-proyects-item-body-title">{title}</div>
-            <div class="cont-proyects-item-body-text">{description}</div>
+            <div class="cont-proyects-item-body-title" lang={lang}>{title}</div>
+            <div class="cont-proyects-item-body-text" lang={lang}>{description}</div>
         </div>
     </div>
 </a>
