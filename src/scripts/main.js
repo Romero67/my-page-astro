@@ -42,14 +42,11 @@ function initSlider(){
   }
   
   function initShowHideHeader(){
-    console.log("initShowHideHeader: ",initShowHideHeader)
     $(window).on('scroll', function() {
       if ($(window).scrollTop() > 0) {
         $('.header').addClass('scrolled');
-        console.log(111111111)
         $('.header-mobile').addClass('scrolled');
       } else {
-        console.log(222222)
         $('.header').removeClass('scrolled');
         $('.header-mobile').removeClass('scrolled');
       }

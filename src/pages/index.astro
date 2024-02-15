@@ -244,23 +244,20 @@ import enLang from "../lang/en.json";
 			</div>
 
 			<div class="form-mail-send">
-				<button type="submit"
-					>{enLang.page_index.contact_form.btn_send}</button
-				>
+				<button type="submit" lang="es">{esLang.page_index.contact_form.btn_send}</button>
+				<button type="submit" lang="en">{enLang.page_index.contact_form.btn_send}</button>
 				<span class="form-msj-error"></span>
 				<span class="form-msj-success"></span>
 			</div>
 		</form>
 	</div>
 
-	<Separate />
-
 	<script>
 		import "../scripts/slick/slick.js";
 		import "../scripts/main.js";
 	</script>
 	<script is:inline>
-		const userLanguage = navigator.language || navigator.userLanguage;
+		let userLanguage = navigator.language || navigator.userLanguage;
 		
 		let langToDelete = ""
 

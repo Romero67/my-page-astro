@@ -1,23 +1,27 @@
 .footer{
-    padding: 0px 50px 30px 50px;
+    background: var(--color-brand);
+    color: var(--color-white);
+    margin-top: 40px;
+    padding-top: 10px;
 
-    &-info{
+    .footer-info{
         margin-top: 40px;
         text-align: center;
         font-weight: 700;
         padding-bottom: 20px;
+        color: var(--color-white);
     }
     
-    &-redes{
+    .footer-redes{
         display: flex;
     }
 
-    &-redes-item svg{
-        fill: #4e4e4e;
+    .footer-redes-item svg{
+        fill: var(--color-white);
     }
 
     @include respond-to('desktop'){
-        &-redes-item svg{
+        .footer-redes-item svg{
             width: 45px;
             height: 45px;
         }

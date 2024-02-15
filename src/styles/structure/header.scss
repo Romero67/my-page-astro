@@ -11,6 +11,10 @@
         margin: auto;
         display: flex;
         justify-content: space-between;
+
+        @include respond-to('desktop'){
+            padding-left: 15px;
+        }
     }
 
     .nav-bar {
@@ -67,6 +71,10 @@
         left: 10px;
         background-color: var(--color-brand);
         border-radius: 5px;
+
+        @include respond-to('desktop'){
+            display: none;
+        }
     }
 
     .header-menu svg {
