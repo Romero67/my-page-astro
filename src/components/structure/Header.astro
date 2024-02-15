@@ -36,6 +36,59 @@ import localExitSvg from "../../images/exit.svg?raw";
       <li class="nav-item"><a href="#tab1">Inicio</a></li>
       <li class="nav-item"><a href="#tab2">Acerca</a></li>
       <li class="nav-item"><a href="#tab3">Contacto</a></li>
+      <ThemeIcon />
      </ul>
     </div>  
 </header>
+
+
+
+<script is:inline type="module">
+
+    const changeTheme = (theme) =>{
+        if (theme === 'light') {
+            document.body.classList.remove('theme--dark');
+            document.querySelectorAll('.sun').forEach(el => el.style.display = 'none')
+            document.querySelectorAll('.moon').forEach(el => el.style.display = 'inherit')
+        } else {
+            document.body.classList.add('theme--dark');
+            document.querySelectorAll('.moon').forEach(el => el.style.display = 'none')
+            document.querySelectorAll('.sun').forEach(el => el.style.display = 'inherit')
+        }
+    }
+
+    const theme = (() => {
+      if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+        return localStorage.getItem('theme');
+      }
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'theme--dark';
+      }
+      return 'light';
+    })();
+  
+    changeTheme(theme)
+  
+    localStorage.setItem('theme', theme);
+  
+    const handleToggleClick = () => {
+      const body = document.body;
+      body.classList.toggle('theme--dark', !body.classList.contains('theme--dark'));
+  
+      const isDark = body.classList.contains('theme--dark');
+      const theme = isDark ? 'theme--dark' : 'light'
+      localStorage.setItem('theme', theme);
+
+      changeTheme(theme)
+  
+      $('.menu-lateral').css('left', '-100%');
+      $('body').css('overflow', 'auto');
+    }
+  
+    const btnsTheme = document.querySelectorAll('.themeToggle');
+  
+    // Agrega un evento de clic a cada elemento
+    btnsTheme.forEach(function(elemento) {
+        elemento.addEventListener('click', handleToggleClick);
+    });
+</script>

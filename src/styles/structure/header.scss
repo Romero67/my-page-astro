@@ -21,6 +21,7 @@
         list-style: none;
         display: flex;
         flex-direction: column;
+        align-items: center;
         @include respond-to('desktop'){
             flex-direction: row;
         }
@@ -32,9 +33,28 @@
 
     .nav-item a {
         text-decoration: none;
-        color: #000;
+        color: var(--color-black);
         font-weight: 700;
         letter-spacing: 0.5px;
+    }
+
+    .header-logo-desktop {
+        text-decoration: none;
+        color: var(--color-black);
+        font-weight: 700;
+        font-size: 18px;
+    }
+
+    .themeToggle {
+        cursor: pointer;
+        border: 0;
+        background: none;
+        .sun {
+            fill: var(--color-black);
+        }
+        .moon {
+            fill: var(--color-black);
+        }
     }
 
     &.scrolled {
@@ -48,14 +68,38 @@
     &.scrolled .header-logo-desktop {
         color: var(--color-white);
     }
-
-    .header-logo-desktop {
-        text-decoration: none;
-        color: var(--color-black);
-        font-weight: 700;
-        font-size: 18px;
+    
+    &.scrolled .themeToggle{
+        .sun{
+            fill: var(--color-white);
+        }
+        .moon{
+            fill: var(--color-white);
+        }
     }
 }
+
+.theme--dark{
+    .header{
+        &.scrolled .nav-item a {
+            color: var(--color-black);
+        }
+    
+        &.scrolled .header-logo-desktop {
+            color: var(--color-black);
+        }
+        
+        &.scrolled .themeToggle{
+            .sun{
+                fill: var(--color-black);
+            }
+            .moon{
+                fill: var(--color-black);
+            }
+        }
+    }
+}
+
 
 .header-mobile {
     position: fixed;
@@ -109,17 +153,6 @@
     overflow: hidden;
     z-index: 999;
 
-    #themeToggle {
-        border: 0;
-        background: none;
-    }
-    .sun {
-        fill: var(--color-brand);
-    }
-    .moon {
-        fill: var(--color-brand);
-    }
-
     .nav-bar{
         list-style: none;
         display: flex;
@@ -171,6 +204,18 @@
             path{
                 fill: var(--color-brand);
             }
+        }
+    }
+
+    .themeToggle {
+        cursor: pointer;
+        border: 0;
+        background: none;
+        .sun {
+            fill: var(--color-brand);
+        }
+        .moon {
+            fill: var(--color-brand);
         }
     }
 
