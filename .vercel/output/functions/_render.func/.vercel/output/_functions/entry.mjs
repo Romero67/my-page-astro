@@ -1,5 +1,5 @@
 import { renderers } from './renderers.mjs';
-import { l as levels, g as getEventPrefix, L as Logger, A as AstroIntegrationLogger, manifest } from './manifest_BPWnVDHN.mjs';
+import { l as levels, g as getEventPrefix, L as Logger, A as AstroIntegrationLogger, manifest } from './manifest_BdUQp7HM.mjs';
 import { e as appendForwardSlash, j as joinPaths, t as trimSlashes, s as slash, p as prependForwardSlash, r as removeTrailingForwardSlash, f as collapseDuplicateSlashes } from './chunks/astro/assets-service_Dzldigfg.mjs';
 import { R as ROUTE_DATA_SYMBOL, A as AstroError, n as ResponseSentError, o as MiddlewareNoDataOrNextCalled, p as MiddlewareNotAResponse, G as GetStaticPathsRequired, q as InvalidGetStaticPathsReturn, t as InvalidGetStaticPathsEntry, v as GetStaticPathsExpectedParams, w as GetStaticPathsInvalidRouteParam, P as PageNumberParamNotFound, N as NoMatchingStaticPathFound, x as PrerenderDynamicEndpointPathCollide, y as LocalsNotAnObject, z as ASTRO_VERSION, C as ClientAddressNotAvailable, S as StaticClientAddressNotAvailable, B as renderEndpoint, D as ReservedSlotName, H as renderSlotToString, J as renderJSX, K as chunkToString, O as CantRenderPage, Q as renderPage$1, T as REROUTE_DIRECTIVE_HEADER } from './chunks/astro_Q067Pq48.mjs';
 import { serialize, parse } from 'cookie';
@@ -2199,7 +2199,7 @@ const createExports = (manifest, { middlewareSecret }) => {
 };
 
 const _page0 = () => import('./chunks/generic_DKtp4pYx.mjs');
-const _page1 = () => import('./chunks/index_CO4j4Vop.mjs');
+const _page1 = () => import('./chunks/index_DiAYX54c.mjs');
 const pageMap = new Map([
     ["node_modules/astro/dist/assets/endpoint/generic.js", _page0],
     ["src/pages/index.astro", _page1]
@@ -2211,7 +2211,7 @@ const _manifest = Object.assign(manifest, {
     middleware: onRequest
 });
 const _args = {
-    "middlewareSecret": "890ab571-dd03-42ec-a93a-35efa00c9514"
+    "middlewareSecret": "89c578c7-94d5-49aa-9318-c4c796cec622"
 };
 const _exports = createExports(_manifest, _args);
 const __astrojsSsrVirtualEntry = _exports.default;
