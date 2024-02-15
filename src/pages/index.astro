@@ -197,49 +197,28 @@ import enLang from "../lang/en.json";
 					>{enLang.page_index.contact_form.title}</span
 				>
 			</div>
+			<label for="form_nombre" lang="es">{esLang.page_index.contact_form.plh_name}</label>
+			<label for="form_nombre" lang="en">{enLang.page_index.contact_form.plh_name}</label>
 			<input
 				type="text"
-				placeholder={esLang.page_index.contact_form.plh_name}
 				id="form_nombre"
 				name="nombre"
-				lang="es"
 			/>
+			<label for="form_mail" lang="es">{esLang.page_index.contact_form.plh_mail}</label>
+			<label for="form_mail" lang="en">{enLang.page_index.contact_form.plh_mail}</label>
 			<input
 				type="text"
-				placeholder={enLang.page_index.contact_form.plh_name}
-				id="form_nombre"
-				name="nombre"
-				lang="en"
-			/>
-			<input
-				type="text"
-				placeholder={esLang.page_index.contact_form.plh_mail}
 				id="form_mail"
 				name="mail"
-				lang="es"
-			/>
-			<input
-				type="text"
-				placeholder={enLang.page_index.contact_form.plh_mail}
-				id="form_mail"
-				name="mail"
-				lang="en"
 			/>
 			<div class="form-mail-contador">
+				<label for="form_mensaje" lang="es">{esLang.page_index.contact_form.plh_message}</label>
+				<label for="form_mensaje" lang="en">{enLang.page_index.contact_form.plh_message}</label>
 				<textarea
 					id="form_mensaje"
 					cols="30"
 					rows="10"
-					name="mensaje"
-					placeholder={esLang.page_index.contact_form.plh_message}
-					lang="es"></textarea>
-				<textarea
-					id="form_mensaje"
-					cols="30"
-					rows="10"
-					name="mensaje"
-					placeholder={enLang.page_index.contact_form.plh_message}
-					lang="en"></textarea>
+					name="mensaje"></textarea>
 				<span class="form-contador-text"></span>
 			</div>
 

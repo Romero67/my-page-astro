@@ -2,7 +2,8 @@
     "items_nav": {
         "initation": "Inicio",
         "about": "Acerca",
-        "contact": "Contacto"
+        "contact": "Contacto",
+        "label_btn_theme": "Cambiar modo oscuro/claro"
     },
     "page_index": {
         "main_job": "Desarrollador Web",
@@ -49,7 +50,7 @@
         "contact_form": {
             "title": "CONTÁCTAME",
             "plh_name": "Nombre",
-            "plh_mail": "E-mail de contacto",
+            "plh_mail": "E-mail",
             "plh_message": "Mensaje",
             "btn_send": "ENVIAR"
         }

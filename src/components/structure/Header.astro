@@ -2,6 +2,8 @@
 import ThemeIcon from '../ThemeIcon.astro'
 import LangIcon from '../LangIcon.astro'
 import localExitSvg from "../../images/exit.svg?raw";
+import esLang from "../../lang/es.json";
+import enLang from "../../lang/en.json";
 ---
 
 <div class="menu-lateral">
@@ -12,11 +14,30 @@ import localExitSvg from "../../images/exit.svg?raw";
         </div>
   
         <ul class="nav-bar">
-            <li class="menu-lateral-item"><a href="#tab1">Inicio</a></li>
-            <li class="menu-lateral-item"><a href="#tab2">Acerca</a></li>
-            <li class="menu-lateral-item"><a href="#tab3">Contacto</a></li>
-            <ThemeIcon />
-            <LangIcon />
+            <li class="menu-lateral-item">
+              <a href="#tab1" lang="es">{esLang.items_nav.initation}</a>
+              <a href="#tab1" lang="en">{enLang.items_nav.initation}</a>
+            </li>
+            <li class="menu-lateral-item">
+              <a href="#tab2" lang="es">{esLang.items_nav.about}</a>
+              <a href="#tab2" lang="en">{enLang.items_nav.about}</a>
+            </li>
+            <li class="menu-lateral-item">
+              <a href="#tab3" lang="es">{esLang.items_nav.contact}</a>
+              <a href="#tab3" lang="en">{enLang.items_nav.contact}</a>
+            </li>
+            <li>
+              <ThemeIcon 
+              labelBtn={esLang.items_nav.label_btn_theme}
+              lang="es"/>
+              <ThemeIcon
+                labelBtn={enLang.items_nav.label_btn_theme}
+                lang="en"/>
+            </li>
+            
+            <li>
+              <LangIcon />
+            </li>
         </ul>
     </div>
 </div>
@@ -33,10 +54,26 @@ import localExitSvg from "../../images/exit.svg?raw";
       MR
      </a>
      <ul class="nav-bar">
-      <li class="nav-item"><a href="#tab1">Inicio</a></li>
-      <li class="nav-item"><a href="#tab2">Acerca</a></li>
-      <li class="nav-item"><a href="#tab3">Contacto</a></li>
-      <ThemeIcon />
+      <li class="nav-item">
+        <a href="#tab1" lang="es">{esLang.items_nav.initation}</a>
+        <a href="#tab1" lang="en">{enLang.items_nav.initation}</a>
+      </li>
+      <li class="nav-item">
+        <a href="#tab2" lang="es">{esLang.items_nav.about}</a>
+        <a href="#tab2" lang="en">{enLang.items_nav.about}</a>
+      </li>
+      <li class="nav-item">
+        <a href="#tab3" lang="es">{esLang.items_nav.contact}</a>
+        <a href="#tab3" lang="en">{enLang.items_nav.contact}</a>
+      </li>
+      <li>
+        <ThemeIcon 
+          labelBtn={esLang.items_nav.label_btn_theme}
+          lang="es"/>
+        <ThemeIcon
+          labelBtn={enLang.items_nav.label_btn_theme}
+          lang="en"/>
+      </li>
       <LangIcon />
      </ul>
     </div>  
@@ -104,6 +141,8 @@ import localExitSvg from "../../images/exit.svg?raw";
       
       const elementsWithLang = document.querySelectorAll("[lang]");
       elementsWithLang.forEach((element) => {
+              if (element.tagName.toLowerCase() === 'html') return
+
               if (element.getAttribute("lang") === langToDelete) {
                   element.style.display = 'none';
               }
@@ -114,15 +153,19 @@ import localExitSvg from "../../images/exit.svg?raw";
   
       localStorage.setItem('mr_lang', langToDelete)
       toggleLangBtns(langToDelete)
+
+      
     }
   
     const toggleLangBtns = (lang) =>{
       if(lang == 'es'){
         document.querySelectorAll('.text-en').forEach(el => el.style.display = 'none')
         document.querySelectorAll('.text-es').forEach(el => el.style.display = 'inherit')
+        document.documentElement.lang = "en"
       }else{
         document.querySelectorAll('.text-es').forEach(el => el.style.display = 'none')
         document.querySelectorAll('.text-en').forEach(el => el.style.display = 'inherit')
+        document.documentElement.lang = "es"
       }
     }
   

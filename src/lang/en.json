@@ -2,7 +2,8 @@
     "items_nav": {
         "initation": "Home",
         "about": "About",
-        "contact": "Contact"
+        "contact": "Contact",
+        "label_btn_theme": "Switch to dark/light mode"
     },
     "page_index": {
         "main_job": "Web Developer",
@@ -49,7 +50,7 @@
         "contact_form": {
             "title": "CONTACT ME",
             "plh_name": "Name",
-            "plh_mail": "Contact E-mail",
+            "plh_mail": "E-mail",
             "plh_message": "Message",
             "btn_send": "SEND"
         }
