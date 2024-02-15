@@ -8,7 +8,7 @@
         "main_job": "Desarrollador Web",
         "about": {
             "title": "Sobre mí",
-            "description": "¡Hola lector! Esta es mi página web personal, aquí iré actualizando sobre mi vida, ahora te quiero contar como soy. Soy alguien que busca siempre romper sus límites, comunicativo, cooperativo, amable y comprometido. Siempre intento dar lo mejor de mí en cada situación, enfocado en la solución no en el problema. Vivo mi vida dedicada a crecer interiormente."
+            "description": "¡Hola! Bienvenido a mi página web. Soy un profesional con 3 años de experiencia sólida trabajando a diario con tecnologías como HTML, CSS, Javascript, Git, Nodejs, Express y MongoDb."
         },
         "experience": {
             "title": "Mí camino",

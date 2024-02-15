@@ -37,6 +37,7 @@ import localExitSvg from "../../images/exit.svg?raw";
       <li class="nav-item"><a href="#tab2">Acerca</a></li>
       <li class="nav-item"><a href="#tab3">Contacto</a></li>
       <ThemeIcon />
+      <LangIcon />
      </ul>
     </div>  
 </header>
@@ -92,3 +93,57 @@ import localExitSvg from "../../images/exit.svg?raw";
         elemento.addEventListener('click', handleToggleClick);
     });
 </script>
+
+<script is:inline type="module">
+
+    const hideHtml = (langToDelete) =>{
+      if(!langToDelete){
+        userLanguage = navigator.language || navigator.userLanguage;
+        langToDelete =  (userLanguage && userLanguage.startsWith('en')) ? 'es' : 'en'
+      }
+      
+      const elementsWithLang = document.querySelectorAll("[lang]");
+      elementsWithLang.forEach((element) => {
+              if (element.getAttribute("lang") === langToDelete) {
+                  element.style.display = 'none';
+              }
+              if (element.getAttribute("lang") !== langToDelete) {
+                  element.style.display = 'inherit';
+              }
+          });
+  
+      localStorage.setItem('mr_lang', langToDelete)
+      toggleLangBtns(langToDelete)
+    }
+  
+    const toggleLangBtns = (lang) =>{
+      if(lang == 'es'){
+        document.querySelectorAll('.text-en').forEach(el => el.style.display = 'none')
+        document.querySelectorAll('.text-es').forEach(el => el.style.display = 'inherit')
+      }else{
+        document.querySelectorAll('.text-es').forEach(el => el.style.display = 'none')
+        document.querySelectorAll('.text-en').forEach(el => el.style.display = 'inherit')
+      }
+    }
+  
+    const getLang = () =>{
+      if (typeof localStorage !== 'undefined' && localStorage.getItem('mr_lang')) {
+        return localStorage.getItem('mr_lang');
+      }
+      return false;
+    }
+  
+    const handleToggleLangClick = () => {
+      const lang = getLang() == 'es' ? 'en' : 'es'
+      hideHtml(lang)
+      $('.menu-lateral').css('left', '-100%');
+      $('body').css('overflow', 'auto');
+    }
+  
+    hideHtml(getLang())
+    const btnsLang = document.querySelectorAll('.langToggle');
+
+    btnsLang.forEach(function(elemento) {
+        elemento.addEventListener('click', handleToggleLangClick);
+    });
+  </script>
