@@ -115,6 +115,9 @@
                 fill: var(--color-black);
             }
         }
+        &.scrolled .langToggle{
+            color: var(--color-black);
+        }
     }
 }
 
