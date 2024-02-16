@@ -33,3 +33,44 @@ $breakpoints: (
   'widescreen': 90em,      //1440px
   'fullhd': 120em          //1920px
 ) !default;
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('/fonts/Quicksand-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('/fonts/Quicksand-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Quicksand';
+  src: url('/fonts/Quicksand-Light.ttf') format('truetype')
+}
+@font-face {
+  font-family: 'Quicksand';
+  src: url('/fonts/Quicksand-Medium.ttf') format('truetype')
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Medium.ttf') format('truetype');
+}
+
+/* Agrega más estilos de fuente según sea necesario */

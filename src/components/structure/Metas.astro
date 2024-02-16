@@ -1,6 +1,8 @@
 ---
 const {pageTitle, pageDescription} = Astro.props;
-const isProd = import.meta.env.PROD == 'true' ? true : false
+console.log(import.meta.env.PROD);
+const isProd = import.meta.env.PROD === 'true';
+console.log(isProd);
 ---
 
 <meta charset="utf-8" />
