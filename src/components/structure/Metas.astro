@@ -1,6 +1,6 @@
 ---
 const {pageTitle, pageDescription} = Astro.props;
-const enableRobots = import.meta.env.PUBLIC_ENABLE_ROBOTS ? true : false;
+const enableRobots = import.meta.env.PUBLIC_VERCEL_ENABLE_ROBOTS ? true : false;
 console.log("ENABLE ROBOTS: ",enableRobots)
 ---
 
