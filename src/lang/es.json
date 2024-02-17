@@ -8,11 +8,11 @@
     "page_index": {
         "main_job": "Desarrollador Web",
         "about": {
-            "title": "Sobre mí",
+            "title": "Sobre mi",
             "description": "¡Hola! Bienvenido a mi página web. Soy un profesional con 3 años de experiencia sólida trabajando a diario con tecnologías como HTML, CSS, Javascript, Git, Nodejs, Express y MongoDb."
         },
         "experience": {
-            "title": "Mí camino",
+            "title": "Mi camino",
             "items": [
                 {
                     "title": "Aplay America SA",
