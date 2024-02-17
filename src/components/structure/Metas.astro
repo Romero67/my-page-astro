@@ -1,8 +1,7 @@
 ---
 const {pageTitle, pageDescription} = Astro.props;
-console.log(import.meta.env.PROD);
-const isProd = import.meta.env.PROD === 'true';
-console.log(isProd);
+const enableRobots = import.meta.env.ENABLE_ROBOTS ? true : false;
+console.log("ENABLE ROBOTS: ",enableRobots)
 ---
 
 <meta charset="utf-8" />
@@ -16,7 +15,7 @@ console.log(isProd);
 <meta property="og:site_name" content="Mariano Romero">
 <meta name="twitter:title" content={pageTitle}>
 <meta property="og:type" content="website">
-<meta name="robots" content={isProd ? 'index, follow' : 'none'}/>
+<meta name="robots" content={enableRobots ? 'index, follow' : 'none'}/>
 <meta name="author" content="Mariano Romero">
 <meta name="publisher" content="Mariano Romero">
 <link rel="canonical" href="http://marianoromero.ar" />
