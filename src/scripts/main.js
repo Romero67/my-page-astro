@@ -132,8 +132,8 @@ function initSlider(){
     });
   }
   
-  emailjs.init('hMBEO4TAW2Lc_EqOs');
-  initSlider();
-  initMenuLateral();
-  initShowHideHeader();
-  initFormContact();
+  // emailjs.init('hMBEO4TAW2Lc_EqOs');
+  // initSlider();
+  // initMenuLateral();
+  // initShowHideHeader();
+  // initFormContact();

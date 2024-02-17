@@ -169,7 +169,7 @@
 }
 
 .technologies {
-    .tech-slider .slick-slide {
+    .tech-slider .swiper-slide {
         text-align: center;
     }
 
@@ -185,17 +185,17 @@
         font-weight: 700;
     }
 
-    .tech-slider .slick-slide svg {
+    .tech-slider .swiper-slide svg {
         width: 64px;
         height: 64px;
         margin-bottom: 10px;
     }
 
-    .tech-slider .slick-slide svg {
+    .tech-slider .swiper-slide svg {
         fill: var(--color-brand);
     }
 
-    .tech-slider .slick-slide svg.icon {
+    .tech-slider .swiper-slide svg.icon {
         fill: var(--color-white);
         stroke: var(--color-brand)
     }

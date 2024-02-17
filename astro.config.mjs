@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import vercel from '@astrojs/vercel/serverless';
+import react from '@astrojs/react';
 
 export default defineConfig({
   output: 'server',
@@ -10,4 +11,5 @@ export default defineConfig({
       preload: true,
     },
   },
+  integrations: [react()]
 });

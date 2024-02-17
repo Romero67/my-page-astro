@@ -3,17 +3,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Separate from "../components/Separate.astro";
 import ExperienceItem from "../components/ExperienceItem.astro";
 import ProyectItem from "../components/ProyectItem.astro";
-import TechSliderItem from "../components/TechSliderItem.astro";
+import TechSlider from "../components/TechSlider.jsx";
 import localWikiImg from "../images/wikicat.png";
 import localFutbolImg from "../images/appfutbol.png";
 import localDragImg from "../images/upload.png";
-import localHtmlSvg from "../images/html.svg?raw";
-import localCssSvg from "../images/css.svg?raw";
-import localJsSvg from "../images/js.svg?raw";
-import localSassSvg from "../images/sass.svg?raw";
-import localMongodbSvg from "../images/mongodb.svg?raw";
-import localNodejsSvg from "../images/nodejs.svg?raw";
-import localGitSvg from "../images/git.svg?raw";
 import esLang from "../lang/es.json";
 import enLang from "../lang/en.json";
 ---
@@ -152,37 +145,7 @@ import enLang from "../lang/en.json";
 
 	<Separate />
 
-	<section class="container technologies">
-		<div class="tech-slider">
-			<TechSliderItem
-				img={localHtmlSvg}
-				imgAlt="Icon HTML"
-				title="HTML"
-			/>
-			<TechSliderItem img={localCssSvg} imgAlt="Icon CSS" title="CSS" />
-			<TechSliderItem
-				img={localJsSvg}
-				imgAlt="Icon Javascript"
-				title="Javascript"
-			/>
-			<TechSliderItem
-				img={localSassSvg}
-				imgAlt="Icon Sass"
-				title="Sass"
-			/>
-			<TechSliderItem
-				img={localMongodbSvg}
-				imgAlt="Icon MongoDB"
-				title="MongoDB"
-			/>
-			<TechSliderItem
-				img={localNodejsSvg}
-				imgAlt="Icon Nodejs"
-				title="Nodejs"
-			/>
-			<TechSliderItem img={localGitSvg} imgAlt="Icon GIT" title="GIT" />
-		</div>
-	</section>
+	<TechSlider client:load/>
 
 	<Separate />
 
@@ -231,10 +194,8 @@ import enLang from "../lang/en.json";
 		</form>
 	</div>
 
-	<script>
-		import "../scripts/main.js";
-	</script>
-	<script is:inline>
+	<script type="module" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+	<script type="module" is:inline>
 		let userLanguage = navigator.language || navigator.userLanguage;
 		
 		let langToDelete = ""
@@ -247,6 +208,89 @@ import enLang from "../lang/en.json";
 			langToDelete = 'en'
 		}
 
-		
+		function limitarCaracteres() {
+		const maxCaracteres = 500; // Número máximo de caracteres
+		const textarea = document.getElementById('form_mensaje');
+		const contador = document.querySelector('.form-contador-text');
+
+		textarea.addEventListener('input', function () {
+			const caracteresRestantes = maxCaracteres - textarea.value.length;
+
+			if (caracteresRestantes >= 0) {
+			contador.textContent = `${caracteresRestantes}/${maxCaracteres}`;
+			} else {
+			textarea.value = textarea.value.slice(0, maxCaracteres);
+			}
+		});
+		}
+
+		// Llama a la función para inicializar la limitación de caracteres
+
+
+		function validarFormContacto() {
+			var formNombre = document.getElementById('form_nombre').value;
+			var formMail = document.getElementById('form_mail').value;
+			var formMensaje = document.getElementById('form_mensaje').value;
+
+			if (!formNombre || formNombre === '') {
+				showErrorMessage("Completar campo nombre, por favor");
+				return false;
+			}
+
+			if (!formMail || formMail === '') {
+				showErrorMessage("Completar campo mail, por favor");
+				return false;
+			}
+
+			if (!formMensaje || formMensaje === '') {
+				showErrorMessage("Escribe el mensaje, por favor");
+				return false;
+			}
+
+			return true;
+		}
+
+		function initFormContact() {
+			limitarCaracteres();
+
+			document.getElementById('contact-form').addEventListener('submit', handleSubmit);
+		}
+
+		function limpiarForm() {
+			document.getElementById('form_nombre').value = '';
+			document.getElementById('form_mail').value = '';
+			document.getElementById('form_mensaje').value = '';
+		}
+
+		function showSuccesMessage(msg) {
+			const msjError = document.querySelector('.form-msj-error');
+			msjError.textContent = msg;
+
+			setTimeout(() => {
+				msjError.textContent = '';
+			}, 3000);
+		}
+
+		function handleSubmit(event) {
+			event.preventDefault();
+
+			if (!validarFormContacto()) return;
+
+			this.removeEventListener('submit', handleSubmit);
+
+			this.contact_number.value = Math.random() * 100000 | 0;
+
+			emailjs.sendForm('service_pkqjivo', 'template_dv1q3cb', this)
+			.then(function () {
+				limpiarForm();
+				showSuccesMessage('¡Se ha enviado correctamente!');
+			}, function (error) {
+				showErrorMessage('Ha ocurrido un error');
+				initFormContact();
+			});
+		}
+
+		emailjs.init('hMBEO4TAW2Lc_EqOs');
+		initFormContact()
 	</script>
 </BaseLayout>
