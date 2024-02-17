@@ -132,7 +132,7 @@ import enLang from "../../lang/en.json";
 </script>
 
 <script is:inline type="module">
-
+  let userLanguage = navigator.language || navigator.userLanguage;
     const hideHtml = (langToDelete) =>{
       if(!langToDelete){
         userLanguage = navigator.language || navigator.userLanguage;

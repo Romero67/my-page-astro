@@ -196,17 +196,6 @@ import enLang from "../lang/en.json";
 
 	<script type="module" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 	<script type="module" is:inline>
-		let userLanguage = navigator.language || navigator.userLanguage;
-		
-		let langToDelete = ""
-
-		if (userLanguage.startsWith("es")) {
-			langToDelete = 'en'
-		} else if (userLanguage.startsWith("en")) {
-			langToDelete = 'es'
-		} else {
-			langToDelete = 'en'
-		}
 
 		function limitarCaracteres() {
 		const maxCaracteres = 500; // Número máximo de caracteres
