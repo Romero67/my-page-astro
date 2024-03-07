@@ -144,10 +144,12 @@ import enLang from "../../lang/en.json";
               if (element.tagName.toLowerCase() === 'html') return
 
               if (element.getAttribute("lang") === langToDelete) {
-                  element.style.display = 'none';
-              }
-              if (element.getAttribute("lang") !== langToDelete) {
-                  element.style.display = 'inherit';
+                  element.classList.add('hide');
+                  element.classList.remove('display-inherit');
+                }
+                if (element.getAttribute("lang") !== langToDelete) {
+                  element.classList.add('display-inherit');
+                  element.classList.remove('hide');
               }
           });
   
@@ -159,12 +161,24 @@ import enLang from "../../lang/en.json";
   
     const toggleLangBtns = (lang) =>{
       if(lang == 'es'){
-        document.querySelectorAll('.text-en').forEach(el => el.style.display = 'none')
-        document.querySelectorAll('.text-es').forEach(el => el.style.display = 'inherit')
+        document.querySelectorAll('.text-en').forEach(el => {
+          el.classList.add('hide')
+          el.classList.remove('display-inherit')
+        })
+        document.querySelectorAll('.text-es').forEach(el => {
+          el.classList.add('display-inherit')
+          el.classList.remove('hide')
+        })
         document.documentElement.lang = "en"
       }else{
-        document.querySelectorAll('.text-es').forEach(el => el.style.display = 'none')
-        document.querySelectorAll('.text-en').forEach(el => el.style.display = 'inherit')
+        document.querySelectorAll('.text-es').forEach(el =>{
+          el.classList.add('hide')
+          el.classList.remove('display-inherit')
+        })
+        document.querySelectorAll('.text-en').forEach(el => {
+          el.classList.add('display-inherit')
+          el.classList.remove('hide')
+        })
         document.documentElement.lang = "es"
       }
     }
