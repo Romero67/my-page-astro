@@ -1,6 +1,6 @@
 const TechSliderItem = ({svgContent, title, imgAlt}) => {
 return (
-    <div>
+    <div className="slide">
         <div className="tech-slider-item">
             <div dangerouslySetInnerHTML={{ __html: svgContent }} />
             <span>{title}</span>

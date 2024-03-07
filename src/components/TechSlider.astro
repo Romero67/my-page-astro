@@ -1,0 +1,72 @@
+---
+import TechSliderItem from "./TechSliderItem.astro";
+import htmlSVG from '../images/html.svg?raw'
+import cssSVG from '../images/css.svg?raw'
+import jsSVG from '../images/js.svg?raw'
+import sassSVG from '../images/sass.svg?raw'
+import mongodbSVG from '../images/mongodb.svg?raw'
+import nodeSVG from '../images/nodejs.svg?raw'
+import gitSVG from '../images/git.svg?raw'
+---
+
+<section class="container technologies">
+    <div class="tech-slider slider">
+        <div class="slide-track">
+            <div class="slide">
+                <TechSliderItem svgContent={htmlSVG} imgAlt="Icon HTML" title="HTML" />
+            </div>
+
+            <div class="slide">
+                <TechSliderItem svgContent={cssSVG} imgAlt="Icon CSS" title="CSS" />
+            </div>
+
+            <div class="slide">
+                <TechSliderItem svgContent={jsSVG} imgAlt="Icon Javascript" title="Javascript" />
+            </div>
+
+            <div class="slide">
+                <TechSliderItem svgContent={sassSVG} imgAlt="Icon Sass" title="Sass" />
+            </div>
+
+            <div class="slide">
+                <TechSliderItem svgContent={mongodbSVG} imgAlt="Icon MongoDB" title="MongoDB" />
+            </div>
+
+            <div class="slide">
+                <TechSliderItem svgContent={nodeSVG} imgAlt="Icon Nodejs" title="Nodejs" />
+            </div>
+
+            <div class="slide">
+                <TechSliderItem svgContent={gitSVG} imgAlt="Icon GIT" title="GIT" />
+            </div>
+
+            <div class="slide slide-repeat">
+                <TechSliderItem svgContent={htmlSVG} imgAlt="Icon HTML" title="HTML" />
+            </div>
+
+            <div class="slide slide-repeat">
+                <TechSliderItem svgContent={cssSVG} imgAlt="Icon CSS" title="CSS" />
+            </div>
+
+            <div class="slide slide-repeat">
+                <TechSliderItem svgContent={jsSVG} imgAlt="Icon Javascript" title="Javascript" />
+            </div>
+
+            <div class="slide slide-repeat">
+                <TechSliderItem svgContent={sassSVG} imgAlt="Icon Sass" title="Sass" />
+            </div>
+
+            <div class="slide slide-repeat">
+                <TechSliderItem svgContent={mongodbSVG} imgAlt="Icon MongoDB" title="MongoDB" />
+            </div>
+
+            <div class="slide slide-repeat">
+                <TechSliderItem svgContent={nodeSVG} imgAlt="Icon Nodejs" title="Nodejs" />
+            </div>
+
+            <div class="slide slide-repeat">
+                <TechSliderItem svgContent={gitSVG} imgAlt="Icon GIT" title="GIT" />
+            </div>
+        </div>
+    </div>
+</section>

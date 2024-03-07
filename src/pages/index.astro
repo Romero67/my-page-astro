@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Separate from "../components/Separate.astro";
 import ExperienceItem from "../components/ExperienceItem.astro";
 import ProyectItem from "../components/ProyectItem.astro";
-import TechSlider from "../components/TechSlider.jsx";
+import TechSlider from "../components/TechSlider.astro";
 import localWikiImg from "../images/wikicat.png";
 import localFutbolImg from "../images/appfutbol.png";
 import localDragImg from "../images/upload.png";
@@ -145,7 +145,7 @@ import enLang from "../lang/en.json";
 
 	<Separate />
 
-	<TechSlider client:load/>
+	<TechSlider/>
 
 	<Separate />
 

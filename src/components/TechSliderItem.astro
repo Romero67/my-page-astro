@@ -1,9 +1,9 @@
 ---
-const {img, imgAlt, title} = Astro.props
+const {svgContent, imgAlt, title} = Astro.props
 ---
 <div>
     <div class="tech-slider-item">
-        <Fragment set:html={img} />  
+        <Fragment set:html={svgContent} />  
         <span>{title}</span>
     </div>
 </div>

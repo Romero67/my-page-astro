@@ -169,9 +169,6 @@
 }
 
 .technologies {
-    .tech-slider .swiper-slide {
-        text-align: center;
-    }
 
     .tech-slider .tech-slider-item {
         display: flex;
@@ -185,19 +182,88 @@
         font-weight: 700;
     }
 
-    .tech-slider .swiper-slide svg {
+    .tech-slider svg {
         width: 64px;
         height: 64px;
         margin-bottom: 10px;
     }
 
-    .tech-slider .swiper-slide svg {
+    .tech-slider svg {
         fill: var(--color-brand);
     }
 
-    .tech-slider .swiper-slide svg.icon {
+    .tech-slider svg.icon {
         fill: var(--color-white);
         stroke: var(--color-brand)
+    }
+    
+    $animationSpeed: 15s;
+    
+    // Animation
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-110px * 7))}
+    }
+    
+    
+    // Styling
+    .slider {
+        background: white;
+        height: 100px;
+        margin: auto;
+        overflow:hidden;
+        position: relative;
+        max-width: 1220px;
+        
+        &::before,
+        &::after {
+            content: "";
+            height: 100px;
+            position: absolute;
+            width: 200px;
+            z-index: 2;
+
+            @include respond-to('desktop'){
+                background: transparent;
+            }
+        }
+        
+        &::after {
+            right: 0;
+            top: 0;
+            transform: rotateZ(180deg);
+        }
+    
+        &::before {
+            left: 0;
+            top: 0;
+        }
+        
+        .slide-track {
+            animation: scroll $animationSpeed linear infinite;
+            display: flex;
+            width: calc(110px * 14);
+
+            @include respond-to('desktop'){
+                animation: none;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+        }
+        
+        .slide {
+            height: 100px;
+            width: 110px;
+
+            @include respond-to('desktop'){
+                width: 150px;
+
+                &.slide-repeat{
+                    display: none;
+                }
+            }
+        }
     }
 }
 
