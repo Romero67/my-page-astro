@@ -15,16 +15,33 @@ import enLang from "../../lang/en.json";
      </a>
   </div>
   <div class="switches">
-    <input type="checkbox" id="darkmode-checkbox" class="darkmode-input">
-    <div class="switch-darkmode">
-      <label for="darkmode-checkbox" class="darkmode-switch">
-        <div class="toggle"></div>
-        <div class="names">
-          <Fragment set:html={sunSvg} />
-          <Fragment set:html={moonSvg} />
-        </div>
-      </label>
+
+    <div class="cont-switch">
+      <input type="checkbox" id="lang-checkbox" class="lang-input">
+      <div class="switch-lang">
+        <label for="lang-checkbox" class="darkmode-switch">
+          <div class="toggle"></div>
+          <div class="names">
+            <span class="names-left">SP</span>
+            <span class="names-right">EN</span>
+          </div>
+        </label>
+      </div>
     </div>
+
+    <div class="cont-switch">
+      <input type="checkbox" id="darkmode-checkbox" class="darkmode-input">
+      <div class="switch-darkmode">
+        <label for="darkmode-checkbox" class="darkmode-switch">
+          <div class="toggle"></div>
+          <div class="names">
+            <Fragment set:html={sunSvg} />
+            <Fragment set:html={moonSvg} />
+          </div>
+        </label>
+      </div>
+    </div>
+    
   </div>
 </header>
 
@@ -127,16 +144,17 @@ import enLang from "../../lang/en.json";
               if (element.getAttribute("lang") === langToDelete) {
                   element.classList.add('hide');
                   element.classList.remove('display-inherit');
+                  document.getElementById('lang-checkbox').checked = true
                 }
                 if (element.getAttribute("lang") !== langToDelete) {
                   element.classList.add('display-inherit');
                   element.classList.remove('hide');
+                  document.getElementById('lang-checkbox').checked = false
               }
           });
   
       localStorage.setItem('mr_lang', langToDelete)
       toggleLangBtns(langToDelete)
-
       
     }
   
@@ -179,10 +197,10 @@ import enLang from "../../lang/en.json";
     }
   
     hideHtml(getLang())
-    const btnsLang = document.querySelectorAll('.langToggle');
+    const btnsLang = document.querySelectorAll('.lang-input');
 
     btnsLang.forEach(function(elemento) {
-        elemento.addEventListener('click', handleToggleLangClick);
+        elemento.addEventListener('change', handleToggleLangClick);
     });
   </script>
 

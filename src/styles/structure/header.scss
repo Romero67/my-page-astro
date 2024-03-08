@@ -97,6 +97,146 @@
     }
 }
 
+.header-mobile {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    transition: background-color 0.3s ease-in-out;
+    transition: top 0.3s ease-in-out;
+    z-index: 99;
+    transition: background-color 0.3s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+
+    &.scrolled {
+        background-color: var(--color-brand);
+    }
+
+    &.scrolled a {
+        color: var(--color-white);
+    }
+
+    &.scrolled [id="lang-checkbox"]:not(:checked) + .switch-lang .names-right{
+        color: var(--color-white);
+    }
+    &.scrolled [id="lang-checkbox"]:checked + .switch-lang .names-left{
+        color: var(--color-white);
+    }
+
+    &.scrolled [id="darkmode-checkbox"]:not(:checked) + .switch-darkmode .icon-moon{
+        fill: var(--color-white);
+    }
+
+
+    .switches{
+        display: flex;
+        column-gap: 10px;
+    }
+
+    .header-logo-mobile{
+        text-decoration: none;
+        color: var(--color-black);
+        font-weight: 700;
+        font-size: 28px;
+        display: flex;
+        align-items: center;
+    }
+      
+    .switch-darkmode{
+
+    }
+
+    .darkmode-switch, .toggle {
+        height: 30px;
+        border-radius: 100px;
+    }
+      
+    .darkmode-switch{
+        position: relative;
+        display: flex;
+        width: 65px;
+        background-color: rgba(230, 230, 230, 0.5);
+        border-radius: 100px;
+        cursor: pointer;
+    }
+      
+    .toggle {
+        position: absolute;
+        width: 50%;
+        background-color: #fff;
+        box-shadow: 0 2px 15px rgba(0,0,0,.15);
+        transition: transform .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+      
+    .names {
+        font-weight: bolder;
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        user-select: none;
+
+
+        svg, span{
+            width: 20px;
+            height: 20px;
+            position: relative;
+        }
+
+        .icon-moon{
+            right: 6px;
+        }
+        .names-right{
+            right: 7px;
+        }
+        .icon-sun, .names-left{
+            left: 6px;
+            fill: var(--color-black);
+        }
+
+        [id="darkmode-checkbox"]:checked + .switch-darkmode .icon-sun{
+            fill: var(--color-white);
+        }
+        
+    }
+    .dark-name {
+        opacity: .5;
+    }
+      
+      /* -------- Switch Styles ------------*/
+    #darkmode-checkbox, #lang-checkbox {
+        display: none;
+    }
+      
+      /* Toggle */
+    [id="darkmode-checkbox"]:checked + .switch-darkmode .toggle{
+        transform: translateX(100%);
+    }
+    
+    [id="darkmode-checkbox"]:checked + .switch-darkmode .dark-name{
+        opacity: 1;
+    }
+    [id="darkmode-checkbox"]:checked + .switch-darkmode .light{
+        opacity: .5;
+    }
+
+    [id="lang-checkbox"]:checked + .switch-lang .toggle{
+        transform: translateX(100%);
+    }
+    
+    [id="lang-checkbox"]:checked + .switch-lang .dark-name{
+        opacity: 1;
+    }
+    
+    [id="lang-checkbox"]:checked + .switch-lang .light{
+        opacity: .5;
+    }
+}
+
+
 .theme--dark{
     .header{
         &.scrolled .nav-item a {
@@ -119,98 +259,27 @@
             color: var(--color-black);
         }
     }
-}
 
-
-.header-mobile {
-    position: fixed;
-    width: 100%;
-    height: 60px;
-    transition: background-color 0.3s ease-in-out;
-    transition: top 0.3s ease-in-out;
-    z-index: 99;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-
-        .header-logo-mobile{
-            text-decoration: none;
+    .header-mobile{
+        [id="lang-checkbox"]:not(:checked) + .switch-lang .names-left{
+            color: var(--color-white);
+        }
+        [id="lang-checkbox"]:checked + .switch-lang .names-left{
             color: var(--color-black);
-            font-weight: 700;
-            font-size: 24px;
-            display: flex;
-            align-items: center;
         }
-      
-        .switch-darkmode{
-
+        [id="lang-checkbox"]:checked + .switch-lang .names-right{
+            color: var(--color-white);
+        }
+        [id="lang-checkbox"]:not(:checked) + .switch-lang .names-right{
+            color: var(--color-black);
         }
 
-        .darkmode-switch, .toggle {
-            height: 30px;
-            border-radius: 100px;
-        }
-      
-        .darkmode-switch{
-            position: relative;
-            display: flex;
-            width: 65px;
-            background-color: rgba(0,0,0,.1);
-            border-radius: 100px;
-            cursor: pointer;
-        }
-      
-        .toggle {
-            position: absolute;
-            width: 50%;
-            background-color: #fff;
-            box-shadow: 0 2px 15px rgba(0,0,0,.15);
-            transition: transform .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-      
-      .names {
-        font-weight: bolder;
-        width: 100%;
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        user-select: none;
-
-        svg{
-            width: 20px;
-            height: 20px;
-            position: relative;
+        [id="darkmode-checkbox"]:not(:checked) + .switch-darkmode .icon-sun{
+            fill: var(--color-white);
         }
 
-        .icon-moon{
-            right: 6px;
+        &.scrolled .header-logo-mobile {
+            color: var(--color-black);
         }
-        .icon-sun{
-            left: 6px;
-            fill: var(--color-black);
-        }
-      }
-      .dark-name {
-        opacity: .5;
-      }
-      
-      /* -------- Switch Styles ------------*/
-      #darkmode-checkbox {
-        display: none;
-      }
-      
-      /* Toggle */
-       [id="darkmode-checkbox"]:checked + .switch-darkmode .toggle{
-        transform: translateX(100%);
-      }
-      
-      [id="darkmode-checkbox"]:checked + .switch-darkmode .dark-name{
-        opacity: 1;
-      }
-      [id="darkmode-checkbox"]:checked + .switch-darkmode .light{
-        opacity: .5;
-      }
+    }
 }
-
