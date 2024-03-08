@@ -160,29 +160,33 @@ import enLang from "../lang/en.json";
 					>{enLang.page_index.contact_form.title}</span
 				>
 			</div>
-			<label for="form_nombre" lang="es">{esLang.page_index.contact_form.plh_name}</label>
-			<label for="form_nombre" lang="en">{enLang.page_index.contact_form.plh_name}</label>
-			<input
-				type="text"
-				id="form_nombre"
-				name="nombre"
-			/>
-			<label for="form_mail" lang="es">{esLang.page_index.contact_form.plh_mail}</label>
-			<label for="form_mail" lang="en">{enLang.page_index.contact_form.plh_mail}</label>
-			<input
-				type="text"
-				id="form_mail"
-				name="mail"
-			/>
-			<div class="form-mail-contador">
-				<label for="form_mensaje" lang="es">{esLang.page_index.contact_form.plh_message}</label>
-				<label for="form_mensaje" lang="en">{enLang.page_index.contact_form.plh_message}</label>
-				<textarea
-					id="form_mensaje"
-					cols="30"
-					rows="10"
-					name="mensaje"></textarea>
-				<span class="form-contador-text"></span>
+			<div class="form-mail-cont">
+				<div class="form-mail-cont-inputs">
+					<label for="form_nombre" lang="es">{esLang.page_index.contact_form.plh_name}</label>
+					<label for="form_nombre" lang="en">{enLang.page_index.contact_form.plh_name}</label>
+					<input
+						type="text"
+						id="form_nombre"
+						name="nombre"
+					/>
+					<label for="form_mail" lang="es">{esLang.page_index.contact_form.plh_mail}</label>
+					<label for="form_mail" lang="en">{enLang.page_index.contact_form.plh_mail}</label>
+					<input
+						type="text"
+						id="form_mail"
+						name="mail"
+					/>
+				</div>
+				<div class="form-mail-contador">
+					<label for="form_mensaje" lang="es">{esLang.page_index.contact_form.plh_message}</label>
+					<label for="form_mensaje" lang="en">{enLang.page_index.contact_form.plh_message}</label>
+					<textarea
+						id="form_mensaje"
+						cols="30"
+						rows="10"
+						name="mensaje"></textarea>
+					<span class="form-contador-text"></span>
+				</div>
 			</div>
 
 			<div class="form-mail-send">

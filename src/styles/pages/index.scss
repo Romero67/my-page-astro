@@ -255,7 +255,7 @@
                 animation: none;
                 width: 100%;
                 display: flex;
-                justify-content: center;
+                justify-content: space-between;
             }
         }
         
@@ -275,7 +275,6 @@
 }
 
 .container-form {
-    max-width: 600px;
 
     .form-mail {
         border: 2px solid var(--color-brand);
@@ -363,19 +362,45 @@
 
     @include respond-to('desktop') {
         .form-mail {
-            padding: 25px 15px;
+            padding: 25px 30px;
         }
 
         .form-mail-title {
-            margin-bottom: 20px;
+            margin-bottom: 32px;
+
+            span{
+                font-size: 32px;
+            }
         }
 
         .form-mail input {
+            margin-bottom: 24px;
+            font-size: 18px;
+        }
+
+        .form-mail-cont{
+            display: flex;
+            column-gap: 30px;
             margin-bottom: 20px;
         }
 
         .form-mail-contador {
             margin-bottom: 20px;
+            width: 100%;
+
+            textarea{
+                height: 135px;
+                font-size: 18px;
+            }
+        }
+
+        .form-mail-cont-inputs{
+            width: 100%;
+        }
+
+        .form-mail-send button{
+            padding: 15px 35px;
+            font-size: 18px;
         }
     }
 }
