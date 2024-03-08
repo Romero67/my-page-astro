@@ -2,6 +2,7 @@
     "items_nav": {
         "initation": "Home",
         "about": "About",
+        "experience": "Projects",
         "contact": "Contact",
         "label_btn_theme": "Switch to dark/light mode"
     },

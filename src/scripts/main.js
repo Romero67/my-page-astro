@@ -22,25 +22,6 @@ function initSlider(){
     });
   }
   
-  function initMenuLateral(){
-    $('#open-menu-btn').click(function(){
-      $('.menu-lateral').css('left', '0px');
-      $('body').css('overflow', 'hidden');
-    })
-    $('#close-menu-btn').click(function(){
-      $('.menu-lateral').css('left', '-100%');
-      $('body').css('overflow', 'auto');
-    })
-    $('#background-close').click(function(){
-      $('.menu-lateral').css('left', '-100%');
-      $('body').css('overflow', 'auto');
-    })
-    $('.menu-lateral .menu-lateral-item').click(function(){
-      $('.menu-lateral').css('left', '-100%');
-      $('body').css('overflow', 'auto');
-    })
-  }
-  
   function initShowHideHeader(){
     $(window).on('scroll', function() {
       if ($(window).scrollTop() > 0) {

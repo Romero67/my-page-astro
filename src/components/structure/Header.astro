@@ -1,51 +1,31 @@
 ---
 import ThemeIcon from '../ThemeIcon.astro'
 import LangIcon from '../LangIcon.astro'
-import localExitSvg from "../../images/exit.svg?raw";
+import moonSvg from "../../images/icon-moon.svg?raw";
+import sunSvg from "../../images/icon-sun.svg?raw";
 import esLang from "../../lang/es.json";
 import enLang from "../../lang/en.json";
 ---
 
-<div class="menu-lateral">
-    <div class="menu-lateral-background" id="background-close"></div>
-    <div class="menu-lateral-container">
-        <div class="menu-lateral-exit" id="close-menu-btn">
-            <Fragment set:html={localExitSvg} />
-        </div>
-  
-        <ul class="nav-bar">
-            <li class="menu-lateral-item">
-              <a href="#tab1" lang="es">{esLang.items_nav.initation}</a>
-              <a href="#tab1" lang="en">{enLang.items_nav.initation}</a>
-            </li>
-            <li class="menu-lateral-item">
-              <a href="#tab2" lang="es">{esLang.items_nav.about}</a>
-              <a href="#tab2" lang="en">{enLang.items_nav.about}</a>
-            </li>
-            <li class="menu-lateral-item">
-              <a href="#tab3" lang="es">{esLang.items_nav.contact}</a>
-              <a href="#tab3" lang="en">{enLang.items_nav.contact}</a>
-            </li>
-            <li>
-              <ThemeIcon 
-              labelBtn={esLang.items_nav.label_btn_theme}
-              lang="es"/>
-              <ThemeIcon
-                labelBtn={enLang.items_nav.label_btn_theme}
-                lang="en"/>
-            </li>
-            
-            <li>
-              <LangIcon />
-            </li>
-        </ul>
-    </div>
-</div>
 
 <header class="header-mobile">
-    <div class="header-menu">
-     <svg id="open-menu-btn" enable-background="new 0 0 32 32" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M26,16c0,1.104-0.896,2-2,2H8c-1.104,0-2-0.896-2-2s0.896-2,2-2h16C25.104,14,26,14.896,26,16z" id="XMLID_314_"/><path d="M26,8c0,1.104-0.896,2-2,2H8c-1.104,0-2-0.896-2-2s0.896-2,2-2h16C25.104,6,26,6.896,26,8z" /><path d="M26,24c0,1.104-0.896,2-2,2H8c-1.104,0-2-0.896-2-2s0.896-2,2-2h16C25.104,22,26,22.896,26,24z" /></svg>
+  <div class="logo">
+    <a class="header-logo-mobile" href="#">
+      MR
+     </a>
+  </div>
+  <div class="switches">
+    <input type="checkbox" id="darkmode-checkbox" class="darkmode-input">
+    <div class="switch-darkmode">
+      <label for="darkmode-checkbox" class="darkmode-switch">
+        <div class="toggle"></div>
+        <div class="names">
+          <Fragment set:html={sunSvg} />
+          <Fragment set:html={moonSvg} />
+        </div>
+      </label>
     </div>
+  </div>
 </header>
 
 <header class="header desktop">
@@ -109,7 +89,8 @@ import enLang from "../../lang/en.json";
   
     localStorage.setItem('theme', theme);
   
-    const handleToggleClick = () => {
+    const handleToggleChangeDarkMode = () => {
+      console.log("cambiando!")
       const body = document.body;
       body.classList.toggle('theme--dark', !body.classList.contains('theme--dark'));
   
@@ -123,11 +104,11 @@ import enLang from "../../lang/en.json";
       document.body.style.overflow = 'auto'
     }
   
-    const btnsTheme = document.querySelectorAll('.themeToggle');
-  
+    const btnsTheme = document.querySelectorAll('.darkmode-input');
+    console.log("btnsTheme: ",btnsTheme)
     // Agrega un evento de clic a cada elemento
     btnsTheme.forEach(function(elemento) {
-        elemento.addEventListener('click', handleToggleClick);
+      elemento.addEventListener('change', handleToggleChangeDarkMode);
     });
 </script>
 
@@ -206,35 +187,6 @@ import enLang from "../../lang/en.json";
   </script>
 
   <script is:inline>
-    function initMenuLateral() {
-      function addEventListeners(selector, event, callback) {
-        var elements = document.querySelectorAll(selector);
-        for (var i = 0; i < elements.length; i++) {
-          elements[i].addEventListener(event, callback);
-        }
-      }
-
-      function openMenu() {
-        document.querySelector('.menu-lateral').style.left = '0px';
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeMenu() {
-        document.querySelector('.menu-lateral').style.left = '-100%';
-        document.body.style.overflow = 'auto';
-      }
-
-      addEventListeners('#open-menu-btn', 'click', openMenu);
-      addEventListeners('#close-menu-btn', 'click', closeMenu);
-      addEventListeners('#background-close', 'click', closeMenu);
-
-      var menuItems = document.querySelectorAll('.menu-lateral .menu-lateral-item');
-      for (var i = 0; i < menuItems.length; i++) {
-        menuItems[i].addEventListener('click', closeMenu);
-      }
-    }
-
-    initMenuLateral()
 
     function initShowHideHeader() {
       function handleScroll() {

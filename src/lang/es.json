@@ -2,6 +2,7 @@
     "items_nav": {
         "initation": "Inicio",
         "about": "Acerca",
+        "experience": "Proyectos",
         "contact": "Contacto",
         "label_btn_theme": "Cambiar modo oscuro/claro"
     },

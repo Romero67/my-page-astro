@@ -129,125 +129,88 @@
     transition: background-color 0.3s ease-in-out;
     transition: top 0.3s ease-in-out;
     z-index: 99;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
 
-    .header-menu {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        background-color: var(--color-brand);
-        border-radius: 5px;
-
-        @include respond-to('desktop'){
-            display: none;
-        }
-    }
-
-    .header-menu svg {
-        display: block;
-        width: 32px;
-        height: 32px;
-        fill: var(--color-white);
-
-        path{
-            fill: $color-white;
-        }
-    }
-
-    .header-logo {
-        text-decoration: none;
-        color: var(--color-black);
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        padding: 18px 0;
-        font-weight: 700;
-        font-size: 18px;
-    }
-}
-
-.menu-lateral {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    transition: all 0.5s ease;
-    left: -100%;
-    overflow: hidden;
-    z-index: 999;
-
-    .nav-bar{
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .menu-lateral-background {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, .5);
-        z-index: 9;
-    }
-    
-    .menu-lateral-container {
-        z-index: 99;
-        position: absolute;
-        width: 100%;
-        max-width: 400px;
-        height: 100%;
-        background: var(--color-white);
-        padding-top: 75px;
-    }
-    
-    .menu-lateral-item {
-        padding: 20px;
-        text-align: center;
-        
-        a{
-            color: var(--color-brand);
+        .header-logo-mobile{
             text-decoration: none;
+            color: var(--color-black);
             font-weight: 700;
-            font-size: 22px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
         }
-    }
-    
-    .menu-lateral-exit {
-        display: block;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        
+      
+        .switch-darkmode{
+
+        }
+
+        .darkmode-switch, .toggle {
+            height: 30px;
+            border-radius: 100px;
+        }
+      
+        .darkmode-switch{
+            position: relative;
+            display: flex;
+            width: 65px;
+            background-color: rgba(0,0,0,.1);
+            border-radius: 100px;
+            cursor: pointer;
+        }
+      
+        .toggle {
+            position: absolute;
+            width: 50%;
+            background-color: #fff;
+            box-shadow: 0 2px 15px rgba(0,0,0,.15);
+            transition: transform .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+      
+      .names {
+        font-weight: bolder;
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        user-select: none;
+
         svg{
-            width: 24px;
-            height: 24px;
-
-            path{
-                fill: var(--color-brand);
-            }
+            width: 20px;
+            height: 20px;
+            position: relative;
         }
-    }
 
-    .themeToggle {
-        cursor: pointer;
-        border: 0;
-        background: none;
-        .sun {
-            fill: var(--color-brand);
+        .icon-moon{
+            right: 6px;
         }
-        .moon {
-            fill: var(--color-brand);
+        .icon-sun{
+            left: 6px;
+            fill: var(--color-black);
         }
-    }
-
-    .langToggle {
-        border: none;
-        background: var(--color-brand);
-        color: white;
-        font-weight: 700;
-        font-size: 22px;
-        padding: 6px;
-        border-radius: 5px;
-        margin-top: 20px;
-    }
+      }
+      .dark-name {
+        opacity: .5;
+      }
+      
+      /* -------- Switch Styles ------------*/
+      #darkmode-checkbox {
+        display: none;
+      }
+      
+      /* Toggle */
+       [id="darkmode-checkbox"]:checked + .switch-darkmode .toggle{
+        transform: translateX(100%);
+      }
+      
+      [id="darkmode-checkbox"]:checked + .switch-darkmode .dark-name{
+        opacity: 1;
+      }
+      [id="darkmode-checkbox"]:checked + .switch-darkmode .light{
+        opacity: .5;
+      }
 }
+
