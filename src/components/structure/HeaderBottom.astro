@@ -1,0 +1,73 @@
+---
+import esLang from "../../lang/es.json";
+import enLang from "../../lang/en.json";
+import homeSvg from '../../images/icon-home.svg?raw'
+import userSvg from '../../images/icon-user.svg?raw'
+import fileSvg from '../../images/icon-file.svg?raw'
+import messageSvg from '../../images/icon-message.svg?raw'
+---
+
+<div class="header-bottom">
+    <ul class="items">
+        <li class="item">
+            <a href="#tab1" lang="es">
+                <Fragment set:html={homeSvg} />  
+                {esLang.items_nav.initation}
+            </a>
+            <a href="#tab1" lang="en">
+                <Fragment set:html={homeSvg} />  
+                {enLang.items_nav.initation}
+            </a>
+        </li>
+        <li class="item item-user">
+            <a href="#tab2" lang="es">
+                <Fragment set:html={userSvg} />  
+                {esLang.items_nav.about}
+            </a>
+            <a href="#tab2" lang="en">
+                <Fragment set:html={userSvg} />  
+                {enLang.items_nav.about}
+            </a>
+        </li>
+        <li class="item item-user">
+            <a href="#tab-experience" lang="es">
+                <Fragment set:html={fileSvg} />  
+                {esLang.items_nav.experience}
+            </a>
+            <a href="#tab-experience" lang="en">
+                <Fragment set:html={fileSvg} />  
+                {enLang.items_nav.experience}
+            </a>
+        </li>
+        <li class="item">
+            <a href="#tab3" lang="es">
+                <Fragment set:html={messageSvg} />  
+                {esLang.items_nav.contact}
+            </a>
+            <a href="#tab3" lang="en">
+                <Fragment set:html={messageSvg} />  
+                {enLang.items_nav.contact}
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<script is:inline type="module">
+    const menu = document.querySelector('.header-bottom'); // Seleccionamos el elemento del menú
+
+    let lastScrollTop = 0; // Variable para almacenar la posición anterior del scroll
+
+    window.addEventListener('scroll', () => {
+
+        const currentScrollTop = window.scrollY; // Obtenemos la posición actual del scroll
+        // Si el scroll va hacia abajo y la posición actual es mayor que la anterior
+        if (currentScrollTop > lastScrollTop && currentScrollTop > menu.offsetHeight) {
+            menu.classList.add('hide-header'); // Ocultamos el menú
+        } else {
+            menu.classList.remove('hide-header'); // Mostramos el menú
+        }
+
+        lastScrollTop = currentScrollTop; // Actualizamos la variable con la posición actual
+    });
+</script>

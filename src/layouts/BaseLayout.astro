@@ -1,5 +1,6 @@
 ---
 import Header from '../components/structure/Header.astro';
+import HeaderBottom from '../components/structure/HeaderBottom.astro';
 import Footer from '../components/structure/Footer.astro';
 import Js from '../components/structure/Js.astro'
 import Metas from '../components/structure/Metas.astro'
@@ -20,6 +21,8 @@ const {pageTitle, pageDescription, page} = Astro.props;
     <Header />
 
     <slot />
+
+    <HeaderBottom />
 
     <Footer />
   </body>
