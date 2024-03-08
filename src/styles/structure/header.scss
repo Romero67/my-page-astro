@@ -7,7 +7,7 @@
 
     .nav {
         max-width: 1220px;
-        padding: 20px 0px;
+        padding: 20px;
         margin: auto;
         display: flex;
         justify-content: space-between;
@@ -95,6 +95,129 @@
             fill: var(--color-white);
         }
     }
+
+    &.scrolled [id="lang-checkbox-desktop"]:not(:checked) + .switch-lang .names-right{
+        color: var(--color-white);
+    }
+    &.scrolled [id="lang-checkbox-desktop"]:checked + .switch-lang .names-left{
+        color: var(--color-white);
+    }
+
+    &.scrolled [id="darkmode-checkbox-desktop"]:not(:checked) + .switch-darkmode .icon-moon{
+        fill: var(--color-white);
+    }
+
+
+    .switches{
+        display: flex;
+        column-gap: 10px;
+    }
+
+    .header-logo-mobile{
+        text-decoration: none;
+        color: var(--color-black);
+        font-weight: 700;
+        font-size: 28px;
+        display: flex;
+        align-items: center;
+    }
+      
+    .switch-darkmode{
+
+    }
+
+    .darkmode-switch, .toggle {
+        height: 30px;
+        border-radius: 100px;
+    }
+      
+    .darkmode-switch{
+        position: relative;
+        display: flex;
+        width: 65px;
+        background-color: rgba(230, 230, 230, 0.5);
+        border-radius: 100px;
+        cursor: pointer;
+    }
+      
+    .toggle {
+        position: absolute;
+        width: 50%;
+        background-color: #fff;
+        box-shadow: 0 2px 15px rgba(0,0,0,.15);
+        transition: transform .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+      
+    .names {
+        font-weight: bolder;
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        user-select: none;
+
+
+        svg, span{
+            width: 20px;
+            height: 20px;
+            position: relative;
+        }
+
+        .icon-moon{
+            right: 6px;
+        }
+        .names-right{
+            right: 7px;
+        }
+        .icon-sun, .names-left{
+            left: 6px;
+            fill: var(--color-black);
+        }
+
+        [id="darkmode-checkbox-desktop"]:checked + .switch-darkmode .icon-sun{
+            fill: var(--color-white);
+        }
+        
+    }
+    .dark-name {
+        opacity: .5;
+    }
+      
+      /* -------- Switch Styles ------------*/
+    #darkmode-checkbox-desktop, #lang-checkbox-desktop {
+        display: none;
+    }
+
+    .switch-lang{
+        padding-left: 10px;
+        border-left: 1px solid rgba(0, 0, 0, .1);
+        margin-right: 10px;
+    }
+      
+      /* Toggle */
+    [id="darkmode-checkbox-desktop"]:checked + .switch-darkmode .toggle{
+        transform: translateX(100%);
+    }
+    
+    [id="darkmode-checkbox-desktop"]:checked + .switch-darkmode .dark-name{
+        opacity: 1;
+    }
+    [id="darkmode-checkbox-desktop"]:checked + .switch-darkmode .light{
+        opacity: .5;
+    }
+
+    [id="lang-checkbox-desktop"]:checked + .switch-lang .toggle{
+        transform: translateX(100%);
+    }
+    
+    [id="lang-checkbox-desktop"]:checked + .switch-lang .dark-name{
+        opacity: 1;
+    }
+    
+    [id="lang-checkbox-desktop"]:checked + .switch-lang .light{
+        opacity: .5;
+    }
 }
 
 .header-mobile {
@@ -109,6 +232,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+
+    @include respond-to('desktop'){
+        display: none;
+    }
 
     &.scrolled {
         background-color: var(--color-brand);
@@ -257,6 +384,23 @@
         }
         &.scrolled .langToggle{
             color: var(--color-black);
+        }
+
+        [id="lang-checkbox-desktop"]:not(:checked) + .switch-lang .names-left{
+            color: var(--color-white);
+        }
+        [id="lang-checkbox-desktop"]:checked + .switch-lang .names-left{
+            color: var(--color-black);
+        }
+        [id="lang-checkbox-desktop"]:checked + .switch-lang .names-right{
+            color: var(--color-white);
+        }
+        [id="lang-checkbox-desktop"]:not(:checked) + .switch-lang .names-right{
+            color: var(--color-black);
+        }
+
+        [id="darkmode-checkbox-desktop"]:not(:checked) + .switch-darkmode .icon-sun{
+            fill: var(--color-white);
         }
     }
 

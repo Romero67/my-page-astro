@@ -13,7 +13,7 @@
     height: 100vh;
 
     @include respond-to('desktop'){
-        padding: 200px 0 ;
+        padding: 250px 0 ;
         scroll-margin-top: 70px;
         height: auto;
     }
@@ -21,10 +21,17 @@
     h1 {
         white-space: nowrap;
         font-size: 30px;
+        
+        @include respond-to('desktop'){
+            font-size: 48px;            
+        }
     }
-
+    
     &-text {
         text-align: center;
+        @include respond-to('desktop'){
+            font-size: 28px;            
+        }
     }
 }
 

@@ -1,6 +1,4 @@
 ---
-import ThemeIcon from '../ThemeIcon.astro'
-import LangIcon from '../LangIcon.astro'
 import moonSvg from "../../images/icon-moon.svg?raw";
 import sunSvg from "../../images/icon-sun.svg?raw";
 import esLang from "../../lang/es.json";
@@ -64,14 +62,35 @@ import enLang from "../../lang/en.json";
         <a href="#tab3" lang="en">{enLang.items_nav.contact}</a>
       </li>
       <li>
-        <ThemeIcon 
-          labelBtn={esLang.items_nav.label_btn_theme}
-          lang="es"/>
-        <ThemeIcon
-          labelBtn={enLang.items_nav.label_btn_theme}
-          lang="en"/>
+        <div class="cont-switch">
+          <input type="checkbox" id="lang-checkbox-desktop" class="lang-input">
+          <div class="switch-lang">
+            <label for="lang-checkbox-desktop" class="darkmode-switch">
+              <div class="toggle"></div>
+              <div class="names">
+                <span class="names-left">SP</span>
+                <span class="names-right">EN</span>
+              </div>
+            </label>
+          </div>
+        </div>
       </li>
-      <LangIcon />
+
+      <li>
+        <div class="cont-switch">
+          <input type="checkbox" id="darkmode-checkbox-desktop" class="darkmode-input">
+          <div class="switch-darkmode">
+            <label for="darkmode-checkbox-desktop" class="darkmode-switch">
+              <div class="toggle"></div>
+              <div class="names">
+                <Fragment set:html={sunSvg} />
+                <Fragment set:html={moonSvg} />
+              </div>
+            </label>
+          </div>
+        </div>
+      </li>
+
      </ul>
     </div>  
 </header>
@@ -107,7 +126,7 @@ import enLang from "../../lang/en.json";
     localStorage.setItem('theme', theme);
   
     const handleToggleChangeDarkMode = () => {
-      console.log("cambiando!")
+      
       const body = document.body;
       body.classList.toggle('theme--dark', !body.classList.contains('theme--dark'));
   
@@ -144,12 +163,14 @@ import enLang from "../../lang/en.json";
               if (element.getAttribute("lang") === langToDelete) {
                   element.classList.add('hide');
                   element.classList.remove('display-inherit');
-                  document.getElementById('lang-checkbox').checked = true
+                  document.getElementById('lang-checkbox').checked = false
+                  document.getElementById('lang-checkbox-desktop').checked = false
                 }
                 if (element.getAttribute("lang") !== langToDelete) {
                   element.classList.add('display-inherit');
                   element.classList.remove('hide');
-                  document.getElementById('lang-checkbox').checked = false
+                  document.getElementById('lang-checkbox').checked = true
+                  document.getElementById('lang-checkbox-desktop').checked = true
               }
           });
   
@@ -192,8 +213,6 @@ import enLang from "../../lang/en.json";
     const handleToggleLangClick = () => {
       const lang = getLang() == 'es' ? 'en' : 'es'
       hideHtml(lang)
-      document.querySelector('.menu-lateral').style.left = '-100%'
-      document.body.style.overflow = 'auto'
     }
   
     hideHtml(getLang())
@@ -223,4 +242,16 @@ import enLang from "../../lang/en.json";
     // Llama a la función para inicializar el evento de scroll
     initShowHideHeader();
 
+  </script>
+
+  <script is:inline>
+    const chkDarkMode = document.querySelectorAll('.darkmode-input')
+
+    chkDarkMode.forEach(el => {
+      el.addEventListener('change', (e) => {
+        chkDarkMode.forEach(chk => {
+          chk.checked = e.target.checked
+        })
+      })
+    })
   </script>
