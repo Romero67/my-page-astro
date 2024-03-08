@@ -100,14 +100,25 @@ import enLang from "../../lang/en.json";
 <script is:inline type="module">
 
     const changeTheme = (theme) =>{
+      const chkDarkMode = document.querySelectorAll('.darkmode-input')
         if (theme === 'light') {
             document.body.classList.remove('theme--dark');
-            document.querySelectorAll('.sun').forEach(el => el.style.display = 'none')
-            document.querySelectorAll('.moon').forEach(el => el.style.display = 'inherit')
+            chkDarkMode.forEach(el => {
+              el.addEventListener('change', (e) => {
+                chkDarkMode.forEach(chk => {
+                  chk.checked = false
+                })
+              })
+            })
         } else {
             document.body.classList.add('theme--dark');
-            document.querySelectorAll('.moon').forEach(el => el.style.display = 'none')
-            document.querySelectorAll('.sun').forEach(el => el.style.display = 'inherit')
+            chkDarkMode.forEach(el => {
+              el.addEventListener('change', (e) => {
+                chkDarkMode.forEach(chk => {
+                  chk.checked = true
+                })
+              })
+            })
         }
     }
 
