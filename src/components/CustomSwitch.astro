@@ -1,0 +1,16 @@
+---
+const {icon1, icon2, elementId}  = Astro.props
+---
+
+<div class="cont-switch">
+    <input type="checkbox" id={elementId} class="darkmode-input" />
+    <div class="switch-darkmode">
+        <label for={elementId} class="darkmode-switch">
+            <div class="toggle"></div>
+            <div class="names">
+                <Fragment set:html={icon1} />
+                <Fragment set:html={icon2} />
+            </div>
+        </label>
+    </div>
+</div>

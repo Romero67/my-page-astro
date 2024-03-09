@@ -3,6 +3,7 @@ import moonSvg from "../../images/icon-moon.svg?raw";
 import sunSvg from "../../images/icon-sun.svg?raw";
 import esLang from "../../lang/es.json";
 import enLang from "../../lang/en.json";
+import SwitchTheme from '../CustomSwitch.astro'
 ---
 
 
@@ -27,18 +28,7 @@ import enLang from "../../lang/en.json";
       </div>
     </div>
 
-    <div class="cont-switch">
-      <input type="checkbox" id="darkmode-checkbox" class="darkmode-input">
-      <div class="switch-darkmode">
-        <label for="darkmode-checkbox" class="darkmode-switch">
-          <div class="toggle"></div>
-          <div class="names">
-            <Fragment set:html={sunSvg} />
-            <Fragment set:html={moonSvg} />
-          </div>
-        </label>
-      </div>
-    </div>
+    <SwitchTheme icon1={sunSvg} icon2={moonSvg} elementId="darkmode-checkbox"  />
     
   </div>
 </header>
@@ -77,18 +67,7 @@ import enLang from "../../lang/en.json";
       </li>
 
       <li>
-        <div class="cont-switch">
-          <input type="checkbox" id="darkmode-checkbox-desktop" class="darkmode-input">
-          <div class="switch-darkmode">
-            <label for="darkmode-checkbox-desktop" class="darkmode-switch">
-              <div class="toggle"></div>
-              <div class="names">
-                <Fragment set:html={sunSvg} />
-                <Fragment set:html={moonSvg} />
-              </div>
-            </label>
-          </div>
-        </div>
+        <SwitchTheme icon1={sunSvg} icon2={moonSvg} elementId="darkmode-checkbox-desktop"  />
       </li>
 
      </ul>
@@ -100,26 +79,21 @@ import enLang from "../../lang/en.json";
 <script is:inline type="module">
 
     const changeTheme = (theme) =>{
-      const chkDarkMode = document.querySelectorAll('.darkmode-input')
+      const chkThemes = document.querySelectorAll('.darkmode-input')
         if (theme === 'light') {
-            document.body.classList.remove('theme--dark');
-            chkDarkMode.forEach(el => {
-              el.addEventListener('change', (e) => {
-                chkDarkMode.forEach(chk => {
-                  chk.checked = false
-                })
-              })
-            })
+          document.body.classList.remove('theme--dark');
+          chkThemes.forEach(el => {
+            el.checked = false
+          })
         } else {
-            document.body.classList.add('theme--dark');
-            chkDarkMode.forEach(el => {
-              el.addEventListener('change', (e) => {
-                chkDarkMode.forEach(chk => {
-                  chk.checked = true
-                })
-              })
-            })
+          document.body.classList.add('theme--dark');
+          chkThemes.forEach(el => {
+            console.log("poniendo en true: ",el)
+            el.checked = true;
+          });
         }
+
+
     }
 
     const theme = (() => {
